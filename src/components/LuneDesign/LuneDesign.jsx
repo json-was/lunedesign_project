@@ -10,6 +10,7 @@ import {
   Title,
   TitleBox,
   TitleLine,
+  Wave,
 } from "./LuneDesign.style";
 
 export const LuneDesign = () => {
@@ -35,6 +36,8 @@ export const LuneDesign = () => {
           <Button>Saber más</Button>
         </TextBox>
       </RightSide>
+      {/* SOLO VISUAL */}
+      <Wave />
     </Main>
   );
 };

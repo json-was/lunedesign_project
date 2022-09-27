@@ -1,5 +1,14 @@
 import styled from "styled-components";
 import bg_pattern from "../../assets/pattern.svg";
+import bg_wave from "../../assets/wave_top.svg";
+
+export const Wave = styled.span`
+  background-image: url(${bg_wave});
+  bottom: -8px;
+  height: 20vh;
+  position: absolute;
+  width: 100%;
+`;
 
 export const Main = styled.div`
   background-image: url(${bg_pattern});
