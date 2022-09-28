@@ -11,9 +11,10 @@ export const Wave = styled.span`
 `;
 
 export const Main = styled.div`
-  background-image: url(${bg_pattern});
+  /* background-image: url(${bg_pattern}); */
   background-position: center;
   background-repeat: repeat;
+  /* background-attachment: fixed; */
   background-size: 2.5rem;
   display: flex;
   flex-wrap: wrap;
