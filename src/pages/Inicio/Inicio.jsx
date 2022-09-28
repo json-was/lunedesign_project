@@ -1,4 +1,5 @@
 import React from "react";
+import { Contacto } from "../../components/Contacto/Contacto";
 import { Footer } from "../../components/Footer/Footer";
 import { LuneDesign } from "../../components/LuneDesign/LuneDesign";
 import { Navbar } from "../../components/Navbar/Navbar";
@@ -13,6 +14,7 @@ export const Inicio = () => {
       <LuneDesign />
       <Servicios />
       <WorkFlow />
+      <Contacto />
       <Footer />
     </Main>
   );
