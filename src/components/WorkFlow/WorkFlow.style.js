@@ -1,14 +1,4 @@
 import styled from "styled-components";
-// import bg_wave from "../../assets/wave_bottom.svg";
-
-// export const Wave = styled.span`
-//   background-image: url(${bg_wave});
-//   /* background-color: transparent; */
-//   bottom: -113rem;
-//   height: 20vh;
-//   position: absolute;
-//   width: 100%;
-// `;
 
 export const Main = styled.div`
   /* background-color: #FEF7EF; */

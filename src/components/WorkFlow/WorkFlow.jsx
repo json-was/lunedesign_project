@@ -7,7 +7,6 @@ import {
   Title,
   TitleBox,
   TopSide,
-  // Wave,
 } from "./WorkFlow.style";
 
 import { BottomBox } from "./components/BottomBox/BottomBox";
@@ -16,7 +15,6 @@ import { dataworkflow } from "../../data/datacard";
 
 export const WorkFlow = () => {
   return (
-    <>
       <Main>
         <TopSide>
           <TitleBox>
@@ -39,7 +37,5 @@ export const WorkFlow = () => {
           </Cointainer>
         </BottomSide>
       </Main>
-      {/* <Wave /> */}
-    </>
   );
 };

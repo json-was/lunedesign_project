@@ -7,6 +7,10 @@ export const CardContainer = styled.a`
   width: 100%;
 `;
 
+// ============
+// FRONT CARD
+// ============
+
 export const FrontCard = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +41,10 @@ export const FrontCardTitle = styled.h3`
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
+
+// ============
+// BACK CARD
+// ============
 
 export const BackCard = styled.div`
   background-color: #fff;

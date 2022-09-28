@@ -6,6 +6,10 @@ export const Main = styled.div`
   width: 100%;
 `;
 
+// ============
+// TOP
+// ============
+
 export const TopSide = styled.div`
   align-items: flex-end;
   /* background-color: aqua; */
@@ -33,6 +37,10 @@ export const SpanLine = styled.span`
   margin: 0 1rem 0 11rem;
   width: 8.5rem;
 `;
+
+// ============
+// BOTTOM
+// ============
 
 export const BottomSide = styled.div`
   /* background-color: blueviolet; */

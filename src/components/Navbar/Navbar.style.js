@@ -12,6 +12,10 @@ export const Main = styled.div`
   z-index: 1000;
 `;
 
+// ============
+// LEFT
+// ============
+
 export const LeftSide = styled.div`
   align-items: center;
   display: flex;
@@ -27,8 +31,6 @@ export const LinkList = styled.ul`
   margin-left: 1rem;
   display: flex;
   flex-wrap: wrap;
-  /* margin: 0;
-  padding: 0; */
 `;
 
 export const LinkItem = styled.li`
@@ -46,6 +48,10 @@ export const LinkItem = styled.li`
     }
   }
 `;
+
+// ============
+// RIGHT
+// ============
 
 export const RightSide = styled.div`
   align-items: center;

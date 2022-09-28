@@ -1,26 +1,19 @@
 import styled from "styled-components";
-import bg_pattern from "../../assets/pattern.svg";
-import bg_wave from "../../assets/wave_top.svg";
-
-export const Wave = styled.span`
-  background-image: url(${bg_wave});
-  bottom: -8px;
-  height: 20vh;
-  position: absolute;
-  width: 100%;
-`;
+import bg_wave_top from "../../assets/bg_wave_top.svg";
 
 export const Main = styled.div`
-  /* background-image: url(${bg_pattern}); */
+  background-image: url(${bg_wave_top});
   background-position: center;
-  background-repeat: repeat;
-  /* background-attachment: fixed; */
-  background-size: 2.5rem;
+  background-size: cover;
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
   width: 100%;
 `;
+
+// ============
+// LEFT
+// ============
 
 export const LeftSide = styled.div`
   /* background-color: violet; */
@@ -34,6 +27,10 @@ export const LeftSide = styled.div`
 export const Logo = styled.img`
   width: 47rem;
 `;
+
+// ============
+// RIGHT
+// ============
 
 export const RightSide = styled.div`
   /* background-color: aqua; */
