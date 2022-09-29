@@ -7,7 +7,23 @@ export const WorkBox = styled.div`
   flex-direction: column;
   height: 25rem;
   width: 18rem;
+
+  @media (hover: hover) {
+    &:hover {
+      p {
+        color: #d14b44;
+      }
+      h3 {
+        color: #d14b44;
+        font-size: 1.5rem;
+      }
+      img {
+        width: 4rem;
+      }
+    }
+  }
 `;
+
 // ============
 // Top
 // ============
@@ -23,7 +39,7 @@ export const TopContainer = styled.div`
 export const LineIcon = styled.div`
   align-items: center;
   /* background-color: blue; */
-  background-color: #71C2B1;
+  background-color: #71c2b1;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -34,7 +50,7 @@ export const LineIcon = styled.div`
 export const IconBox = styled.div`
   align-items: center;
   /* background-color: blue; */
-  background-color: #71C2B1;
+  background-color: #71c2b1;
   border-radius: 50%;
   display: flex;
   height: 6rem;
@@ -69,5 +85,3 @@ export const TextTitle = styled.h3`
   font-size: 1.2rem;
   margin-top: 2.5rem;
 `;
-
-
