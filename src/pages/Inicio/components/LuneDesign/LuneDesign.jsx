@@ -1,4 +1,4 @@
-import Logo_face from "../../assets/Logo-Face.png";
+import Logo_face from "@assets/Logo-Face.png";
 import {
   Button,
   LeftSide,

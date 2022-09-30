@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg_pattern from "../../assets/pattern.svg";
+import bg_pattern from "@assets/pattern.svg";
 
 export const Main = styled.div`
   background-image: url(${bg_pattern});

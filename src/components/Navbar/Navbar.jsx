@@ -1,5 +1,5 @@
-import Logo_LuneDesign from "../../assets/Logo_LuneDesign.png";
-import exit_icon from "../../assets/icons/exit_icon.svg";
+import Logo_LuneDesign from "@assets/Logo_LuneDesign.png";
+import exit_icon from "@assets/icons/exit_icon.svg";
 import {
   Button,
   ExitIcon,

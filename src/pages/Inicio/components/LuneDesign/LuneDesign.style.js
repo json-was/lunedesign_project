@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg_wave_top from "../../assets/bg_wave_top.svg";
+import bg_wave_top from "@assets/bg_wave_top.svg";
 
 export const Main = styled.div`
   background-image: url(${bg_wave_top});

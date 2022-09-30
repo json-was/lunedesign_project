@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-background-color: #000;
+  background-color: #000;
   height: 3rem;
   width: 100%;
   display: flex;
@@ -10,7 +10,6 @@ background-color: #000;
 `;
 
 export const Text = styled.p`
-font-size: 1rem;
-color: #fff;
+  font-size: 1rem;
+  color: #fff;
 `;
-

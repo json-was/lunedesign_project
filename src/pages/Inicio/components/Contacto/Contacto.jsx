@@ -10,8 +10,8 @@ import {
   Title,
   TitleBox,
 } from "./Contacto.style";
-import Logo_LuneDesign from "../../assets/Logo_LuneDesign.png";
-import mail_icon from "../../assets/icons/mail_icon.svg";
+import Logo_LuneDesign from "@assets/Logo_LuneDesign.png";
+import mail_icon from "@assets/icons/mail_icon.svg";
 
 export const Contacto = () => {
   return (

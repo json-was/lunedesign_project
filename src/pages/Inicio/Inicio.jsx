@@ -1,10 +1,10 @@
 import React from "react";
-import { Contacto } from "../../components/Contacto/Contacto";
-import { Footer } from "../../components/Footer/Footer";
-import { LuneDesign } from "../../components/LuneDesign/LuneDesign";
-import { Navbar } from "../../components/Navbar/Navbar";
-import { Servicios } from "../../components/Servicios/Servicios";
-import { WorkFlow } from "../../components/WorkFlow/WorkFlow";
+import { Navbar } from "@components/Navbar/Navbar";
+import { Footer } from "@components/Footer/Footer";
+import { LuneDesign } from "@pages/Inicio/components/LuneDesign/LuneDesign";
+import { Servicios } from "@pages/Inicio/components/Servicios/Servicios";
+import { WorkFlow } from "@pages/Inicio/components/WorkFlow/WorkFlow";
+import { Contacto } from "@pages/Inicio/components/Contacto/Contacto";
 import { Main } from "./Inicio.style";
 
 export const Inicio = () => {

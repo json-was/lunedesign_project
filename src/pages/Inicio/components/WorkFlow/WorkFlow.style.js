@@ -60,7 +60,7 @@ export const Cointainer = styled.div`
 export const CentralLine = styled.div`
   /* background-color: blue; */
   align-items: center;
-  background-color: #71C2B1;
+  background-color: #71c2b1;
   box-shadow: 0px 1px 3px #1e1e1e;
   display: flex;
   height: 2.2rem;

@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.css";
-import { Inicio } from "./pages/Inicio/Inicio";
+import { Inicio } from "@pages/Inicio/Inicio";
 
 export const App = () => {
   return (
     <>
-      <Inicio/>
+      <Inicio />
     </>
   );
 };

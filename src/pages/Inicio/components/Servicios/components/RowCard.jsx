@@ -6,11 +6,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./RowCard.css";
 
-import calculator from "../../../assets/calculator.png";
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { datacard } from "../../../data/datacard";
+import { datacard } from "@data/datacard";
 import {
   BackCard,
   BackCardTitle,
@@ -47,7 +45,7 @@ export const RowCard = () => {
           <CardContainer target={"_blank"} href="www.google.com">
             {/* FRONT CARD */}
             <FrontCard>
-              <CardImg src={calculator} />
+              <CardImg src={`src/assets/${data.img}.png`} />
               <FrontCardTitle>{data.title}</FrontCardTitle>
             </FrontCard>
             {/* BACK CARD */}

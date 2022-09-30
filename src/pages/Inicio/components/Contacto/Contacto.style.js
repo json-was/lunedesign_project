@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg_wave_contact from "../../assets/bg_wave_contact.svg";
+import bg_wave_contact from "@assets/bg_wave_contact.svg";
 
 export const Main = styled.div`
   background-image: url(${bg_wave_contact});

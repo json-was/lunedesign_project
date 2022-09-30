@@ -8,6 +8,7 @@ import {
   TopContainer,
   WorkBox,
 } from "./TopBox.style";
+
 export const TopBox = ({ title, img, description }) => {
   const imgVariable = `src/assets/icons/${img}.svg`;
 
