@@ -10,6 +10,10 @@ export const Main = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1000;
+
+  @media screen and (max-width: 1366px) {
+    height: 4.5rem;
+  }
 `;
 
 // ============
@@ -25,6 +29,10 @@ export const LeftSide = styled.div`
 export const Logo = styled.img`
   margin-top: 4.5rem;
   width: 11rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 9.5rem;
+  }
 `;
 
 export const LinkList = styled.ul`

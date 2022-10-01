@@ -22,6 +22,22 @@ export const WorkBox = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 1366px) {
+    height: 21rem;
+    width: 13rem;
+
+    @media (hover: hover) {
+      &:hover {
+        h3 {
+          font-size: 1.3rem;
+        }
+        img {
+          width: 3.5rem;
+        }
+      }
+    }
+  }
 `;
 
 // ============
@@ -41,11 +57,19 @@ export const TopContainer = styled.div`
 export const Text = styled.p`
   margin-bottom: 2rem;
   text-align: center;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 0.85rem;
+  }
 `;
 
 export const TextTitle = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1rem;
+  }
 `;
 
 // ============
@@ -69,6 +93,10 @@ export const LineIcon = styled.div`
   height: 100%;
   justify-content: flex-end;
   width: 0.8rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 0.7rem;
+  }
 `;
 
 export const IconBox = styled.div`
@@ -81,8 +109,17 @@ export const IconBox = styled.div`
   height: 6rem;
   justify-content: center;
   width: 6rem;
+
+  @media screen and (max-width: 1366px) {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
 `;
 
 export const Icon = styled.img`
   width: 3.5rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 3rem;
+  }
 `;

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import bg_wave_top from "@assets/bg_wave_top.svg";
 
+// @media screen and (min-width:350px){
+
+// }
+
 export const Main = styled.div`
   background-image: url(${bg_wave_top});
   background-position: center;
@@ -26,8 +30,22 @@ export const LeftSide = styled.div`
 
 export const Logo = styled.img`
   width: 47rem;
-`;
 
+  @media screen and (max-width: 1680px) {
+    width: 35rem;
+  }
+
+  @media screen and (max-width: 1366px) {
+    width: 28rem;
+  }
+`;
+// export const Logo = styled.img`
+//   width: 47rem;
+
+//   @media screen and (min-width:1680px) {
+
+//   }
+// `;
 // ============
 // RIGHT
 // ============
@@ -59,6 +77,10 @@ export const TitleLine = styled.span`
   color: #1e1e1e;
   font-family: "Bowlby One SC", cursive;
   font-size: 6rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 4.5rem;
+  }
 `;
 
 export const TextBox = styled.div`
@@ -70,6 +92,10 @@ export const TextBox = styled.div`
 export const Parrafo = styled.p`
   font-size: 1.25rem;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const Button = styled.a`
@@ -88,5 +114,9 @@ export const Button = styled.a`
       background-color: #65b1a0;
       cursor: pointer;
     }
+  }
+
+  @media screen and (max-width: 1366px) {
+    padding: 0.6rem 3.5rem;
   }
 `;

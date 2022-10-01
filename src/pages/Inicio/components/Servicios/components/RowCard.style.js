@@ -75,4 +75,8 @@ export const CardDescription = styled.p`
   height: 70%;
   margin: 1.5rem;
   overflow-y: scroll;
+
+  @media screen and (max-width: 1366px) {
+    height: 45%;
+  }
 `;

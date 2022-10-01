@@ -29,6 +29,10 @@ export const TitleBox = styled.div`
 export const Title = styled.h3`
   font-size: 2rem;
   font-weight: 400;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const SpanLine = styled.span`
@@ -36,6 +40,10 @@ export const SpanLine = styled.span`
   height: 2px;
   margin: 0 1rem 0 11rem;
   width: 8.5rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 5rem;
+  }
 `;
 
 // ============

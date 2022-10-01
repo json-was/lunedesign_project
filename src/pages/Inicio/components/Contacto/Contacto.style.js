@@ -26,6 +26,10 @@ export const LeftSide = styled.div`
 export const Logo = styled.img`
   margin-top: 10%;
   width: 35rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 28rem;
+  }
 `;
 
 // ============
@@ -49,6 +53,10 @@ export const TitleBox = styled.div`
 export const Title = styled.h3`
   font-size: 2rem;
   font-weight: 400;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const SpanLine = styled.span`
@@ -56,6 +64,10 @@ export const SpanLine = styled.span`
   height: 2px;
   margin-right: 1rem;
   width: 8.5rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 5rem;
+  }
 `;
 
 export const TextBox = styled.div`
@@ -65,12 +77,24 @@ export const TextBox = styled.div`
   height: auto;
   margin-top: 5rem;
   width: auto;
+
+  @media screen and (max-width: 1366px) {
+    margin-top: 2rem;
+  }
 `;
 
 export const IconMail = styled.img`
   width: 3rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 2rem;
+  }
 `;
 
 export const Parrafo = styled.p`
   font-size: 2rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1.5rem;
+  }
 `;
