@@ -82,3 +82,75 @@ export const dataworkflow = [
       "Si todo está en condiciones se le hará la entrega de su producto y toda la propiedad del mismo.",
   },
 ];
+
+export const product = [
+  {
+    id: 1,
+    title:
+      "Pack 50 Fotografias + preset Lightroom + impresion + juego de cartas + invitaciones impresas + un pomeranian pos siasdasdsadasdsadasdasdasdadasdasdasdadadasdasdadsadasasdasddddddd",
+  },
+  {
+    id: 2,
+    title: "Hola",
+  },
+  {
+    id: 3,
+    title: "Hola",
+  },
+  {
+    id: 4,
+    title: "Hola",
+  },
+  {
+    id: 5,
+    title: "Hola",
+  },
+  {
+    id: 6,
+    title: "Hola",
+  },
+  {
+    id: 7,
+    title: "Hola",
+  },
+  {
+    id: 8,
+    title: "Hola",
+  },
+  {
+    id: 9,
+    title: "Hola",
+  },
+  {
+    id: 10,
+    title: "Hola",
+  },
+  {
+    id: 11,
+    title: "Hola",
+  },
+  {
+    id: 12,
+    title: "Hola",
+  },
+  {
+    id: 13,
+    title: "Hola",
+  },
+  {
+    id: 14,
+    title: "Hola",
+  },
+  {
+    id: 15,
+    title: "Hola",
+  },
+  {
+    id: 16,
+    title: "Hola",
+  },
+  {
+    id: 17,
+    title: "Hola",
+  },
+];
