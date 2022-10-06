@@ -9,8 +9,7 @@ import {
   TopSide,
 } from "./WorkFlow.style";
 
-import { BottomBox } from "./components/BottomBox/BottomBox";
-import { TopBox } from "./components/TopBox/TopBox";
+import { TopBox, BottomBox } from "./components";
 import { dataworkflow } from "@data/datacard";
 
 export const WorkFlow = () => {

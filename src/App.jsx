@@ -1,9 +1,7 @@
 import React from "react";
 import "./index.css";
-import { Navbar } from "@components/Navbar/Navbar";
-import { Footer } from "@components/Footer/Footer";
-import { Inicio } from "@pages/Inicio/Inicio";
-import { Tienda } from "@pages/Tienda/Tienda";
+import { Navbar, Footer } from "@components";
+import { Inicio, Tienda } from "@pages";
 
 export const App = () => {
   return (

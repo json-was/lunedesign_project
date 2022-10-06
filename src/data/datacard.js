@@ -137,20 +137,4 @@ export const product = [
     id: 13,
     title: "Hola",
   },
-  {
-    id: 14,
-    title: "Hola",
-  },
-  {
-    id: 15,
-    title: "Hola",
-  },
-  {
-    id: 16,
-    title: "Hola",
-  },
-  {
-    id: 17,
-    title: "Hola",
-  },
 ];

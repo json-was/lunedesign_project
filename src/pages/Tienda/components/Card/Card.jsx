@@ -26,7 +26,7 @@ export const Card = (data) => {
       <InfoBox>{data.title}</InfoBox>
       {/* SECTION3 */}
       <PrecioBox>
-        <PrecioNum>$000.000</PrecioNum>
+        <PrecioNum>$000.000.000</PrecioNum>
         <Opciones>
           {isAdmin ? (
             <DeleteCarrito>

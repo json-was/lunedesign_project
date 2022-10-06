@@ -1,7 +1,4 @@
-import { LuneDesign } from "@pages/Inicio/components/LuneDesign/LuneDesign";
-import { Servicios } from "@pages/Inicio/components/Servicios/Servicios";
-import { WorkFlow } from "@pages/Inicio/components/WorkFlow/WorkFlow";
-import { Contacto } from "@pages/Inicio/components/Contacto/Contacto";
+import { LuneDesign, Servicios, WorkFlow, Contacto } from "./components";
 import { Main } from "./Inicio.style";
 
 export const Inicio = () => {

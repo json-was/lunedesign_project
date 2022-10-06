@@ -1,4 +1,5 @@
 import { product } from "@data/datacard";
+import { Card } from "./components";
 import {
   BottomSide,
   Main,
@@ -7,7 +8,6 @@ import {
   TitleBox,
   TopSide,
 } from "./Tienda.style";
-import { Card } from "./components/Card";
 
 export const Tienda = () => {
   return (

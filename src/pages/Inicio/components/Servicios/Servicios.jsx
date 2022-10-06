@@ -6,7 +6,7 @@ import {
   TitleBox,
   TopSide,
 } from "./Servicios.style";
-import { RowCard } from "./components/RowCard";
+import { RowCard } from "./components";
 
 export const Servicios = () => {
   return (
