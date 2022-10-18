@@ -2,15 +2,17 @@ import React from "react";
 import "./index.css";
 import { Navbar, Footer } from "@components";
 import { Inicio, Tienda, AddModifyItem } from "@pages";
+import { Perfil } from "./pages/Perfil/Perfil";
 
 export const App = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       {/* <Inicio /> */}
       {/* <Tienda /> */}
       {/* <AddModifyItem /> */}
-      <Footer/>
+      <Perfil />
+      <Footer />
     </>
   );
 };
