@@ -1,6 +1,5 @@
 import styled from "styled-components";
-// import pattern_green from "@assets/background/cuadricula_green.svg";
-import pattern_green from "@assets/background/pattern.svg";
+import pattern_green from "@assets/background/cuadricula_green_grey.svg";
 
 export const Main = styled.div`
   /* height: 100vh; */
