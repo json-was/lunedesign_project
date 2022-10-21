@@ -12,8 +12,8 @@ export const App = () => {
       {/* <Tienda /> */}
       {/* <AddModifyItem /> */}
       {/* <Perfil /> */}
-      <Login />
-      {/* <Register /> */}
+      {/* <Login /> */}
+      <Register />
       <Footer />
     </>
   );
