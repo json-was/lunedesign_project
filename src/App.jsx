@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
 import { Navbar, Footer } from "@components";
-import { Inicio, Tienda, AddModifyItem } from "@pages";
-import { Perfil } from "./pages/Perfil/Perfil";
+import { Inicio, Tienda, AddModifyItem, Perfil } from "@pages";
+import { Login, Register } from "@auth/pages";
 
 export const App = () => {
   return (
@@ -11,7 +11,9 @@ export const App = () => {
       {/* <Inicio /> */}
       {/* <Tienda /> */}
       {/* <AddModifyItem /> */}
-      <Perfil />
+      {/* <Perfil /> */}
+      <Login />
+      {/* <Register /> */}
       <Footer />
     </>
   );

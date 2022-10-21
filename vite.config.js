@@ -13,6 +13,7 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@redux': path.resolve(__dirname, './src/redux'),
+      '@auth': path.resolve(__dirname, './src/auth'),
     }
   },
   plugins: [react()]
