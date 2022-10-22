@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   /* background-color: #FEF7EF; */
-  height: 80vh;
+  min-height: 80vh;
   width: 100%;
 `;
 
@@ -11,8 +11,8 @@ export const Main = styled.div`
 // ============
 
 export const TopSide = styled.div`
-  align-items: flex-end;
   /* background-color: aqua; */
+  align-items: flex-end;
   display: flex;
   height: 20%;
   width: 100%;
@@ -57,8 +57,8 @@ export const BottomSide = styled.div`
 `;
 
 export const Cointainer = styled.div`
-  align-items: center;
   /* background-color: red; */
+  align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;

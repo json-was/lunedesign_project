@@ -40,13 +40,12 @@ export const Login = () => {
             <Line />
 
             <BotonSolid>Iniciar sesión</BotonSolid>
-            <BotonOutline>Iniciar con Google</BotonOutline>
+            {/* <BotonOutline>Iniciar con Google</BotonOutline> */}
+            <SinCuenta>
+              <Texto>¿No tienes cuenta?</Texto>
+              <NuevaCuenta>Crear cuenta</NuevaCuenta>
+            </SinCuenta>
           </Formulario>
-
-          <SinCuenta>
-            <Texto>¿No tienes cuenta?</Texto>
-            <NuevaCuenta>Crear cuenta</NuevaCuenta>
-          </SinCuenta>
         </Card>
       </Wave>
     </Main>

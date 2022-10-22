@@ -1,33 +1,26 @@
 import styled from "styled-components";
-import pattern_green from "@assets/background/cuadricula_green_grey.svg";
+import cuadricula_green_grey from "@assets/background/cuadricula_green_grey.svg";
 
 export const Main = styled.div`
-  background-image: url(${pattern_green});
-  background-position: center;
-  background-repeat: repeat;
-  background-size: 2.5rem;
-  display: flex;
   align-items: center;
+  background: fixed repeat center/2rem url(${cuadricula_green_grey});
+  display: flex;
   justify-content: center;
-  height: 95vh;
+  min-height: 95vh;
   width: 100%;
-
-  @media screen and (max-width: 1366px) {
-    height: 120vh;
-  }
 `;
 
 export const CardContainer = styled.div`
-  /* opacity: .5; */
   background-color: #fff;
   border-radius: 1rem;
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  height: 70%;
+  height: 40rem;
   margin-top: 5rem;
   width: 70%;
 
   @media screen and (max-width: 1366px) {
-    margin: 8rem 0 3rem 0;
+    height: 32rem;
+    margin: 7rem 0 3rem 0;
   }
 `;
 
@@ -40,7 +33,7 @@ export const TopSide = styled.div`
   align-items: center;
   border-bottom: 2px solid #ddd;
   display: flex;
-  height: 15%;
+  height: 12%;
   width: 100%;
 
   @media screen and (max-width: 1366px) {
@@ -51,8 +44,8 @@ export const TopSide = styled.div`
 export const TitleBox = styled.div`
   align-items: center;
   display: flex;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Title = styled.h3`
@@ -111,58 +104,46 @@ export const Label = styled.p`
   margin-top: 2rem;
 
   @media screen and (max-width: 1366px) {
-    margin-top: 1.2rem;
     font-size: 1.2rem;
+    margin-top: 1.5rem;
   }
 `;
 
 export const Input = styled.input`
-  background-color: #c8c8c8;
-  border-color: #c8c8c8;
+  background-color: #fff;
   border-radius: 0.2rem;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  color: #868686;
+  border: 1px solid #c8c8c8;
+  color: #1e1e1e;
   font-size: 1rem;
-  height: 1.8rem;
   margin-top: 0.5rem;
-  padding: 3px;
-  width: 90%;
+  padding: 0.5rem 0 0.5rem 2%;
+  width: 89%;
 
   &:focus {
-    background-color: #cccccc;
-    color: #1e1e1e;
+    border: 1px solid #f8bfb3;
     outline: none;
-  }
-
-  @media screen and (max-width: 1366px) {
-    margin-top: 0.2rem;
-    height: 1.4rem;
   }
 `;
 
 export const InputBox = styled.textarea`
-  background-color: #c8c8c8;
-  border-color: #c8c8c8;
+  background-color: #fff;
   border-radius: 0.2rem;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  color: #868686;
-  height: 9rem;
+  border: 1px solid #c8c8c8;
+  color: #1e1e1e;
+  font-size: 1rem;
+  height: 7.7rem;
   margin-top: 0.5rem;
-  width: 90%;
+  padding: 0.5rem 0 0.5rem 2%;
   resize: none;
+  width: 89%;
 
   &:focus {
-    background-color: #cccccc;
-    color: #1e1e1e;
+    border: 1px solid #f8bfb3;
     outline: none;
   }
 
   @media screen and (max-width: 1366px) {
-    height: 8rem;
+    height: 5.5rem;
   }
 `;
 
@@ -177,7 +158,7 @@ export const BtnGuardar = styled.button`
   text-decoration: none;
 
   &:active {
-    background-color: #fff;
+    background-color: #65b1a0;
   }
 
   @media (hover: hover) {
@@ -202,13 +183,13 @@ export const RightSide = styled.div`
 `;
 
 export const ImagenProducto = styled.img`
-  border-radius: 0.8rem;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  border-radius: 0.5rem;
   height: 68%;
   margin-top: 3rem;
   width: 70%;
 
   @media screen and (max-width: 1366px) {
+    height: 68%;
     width: 80%;
   }
 `;

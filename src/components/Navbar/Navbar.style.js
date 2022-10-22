@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-  /* align-items: center; */
-  /* background-color: #f8bfb3; */
   background: rgb(250, 178, 169);
   background: linear-gradient(
     90deg,
@@ -11,6 +9,7 @@ export const Main = styled.div`
     rgba(248, 191, 179, 1) 90%,
     rgba(250, 178, 169, 1) 100%
   );
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   display: flex;
   font-size: 1rem;
   height: 6rem;
@@ -18,7 +17,6 @@ export const Main = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 
   @media screen and (max-width: 1366px) {
     height: 4.5rem;
@@ -93,7 +91,7 @@ export const ExitIcon = styled.img`
 export const Button = styled.a`
   background-color: #71c2b1;
   border-radius: 0.5rem;
-  box-shadow: 0px 1px 6px #bbb;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin-left: 0.5rem;
   padding: 0.6rem 0.8rem;
   text-decoration: none;

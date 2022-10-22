@@ -1,58 +1,51 @@
 import styled from "styled-components";
-import pattern_green from "@assets/background/cuadricula_green_grey.svg";
+import cuadricula_green_grey from "@assets/background/cuadricula_green_grey.svg";
 
-export const Main = styled.div`
-  background-image: url(${pattern_green});
-  background-position: center;
-  background-repeat: repeat;
-  background-size: 2.5rem;
-  display: flex;
+export const Main = styled.main`
   align-items: center;
+  background: fixed repeat center/2rem url(${cuadricula_green_grey});
+  display: flex;
   justify-content: center;
-  height: 95vh;
+  min-height: 95vh;
   width: 100%;
-
-  @media screen and (max-width: 1366px) {
-    height: 120vh;
-  }
 `;
 
-export const CardContainer = styled.div`
-  /* opacity: .5; */
+// ============
+// CARD
+// ============
+
+export const Card = styled.div`
   background-color: #fff;
   border-radius: 1rem;
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  height: 70%;
+  height: 40rem;
   margin-top: 5rem;
-  width: 70%;
+  width: 65%;
 
   @media screen and (max-width: 1366px) {
-    margin: 8rem 0 3rem 0;
+    height: 30rem;
+    margin: 7rem 0 3rem 0;
   }
 `;
 
 // ============
-// TOP
+// TOP CARD
 // ============
 
-export const TopSide = styled.div`
+export const TopSideCard = styled.div`
   /* background-color: aqua; */
   align-items: center;
   border-bottom: 2px solid #ddd;
   display: flex;
   height: 15%;
   width: 100%;
-
-  @media screen and (max-width: 1366px) {
-    height: 5rem;
-  }
 `;
 
 export const TitleBox = styled.div`
   align-items: center;
   display: flex;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Title = styled.h3`
@@ -76,10 +69,10 @@ export const SpanLine = styled.span`
 `;
 
 // ============
-// BOTTOM
+// BOTTOM CARD
 // ============
 
-export const BottomSide = styled.div`
+export const BottomSideCard = styled.div`
   /* background-color: aqua; */
   display: flex;
   flex-wrap: wrap;
@@ -88,72 +81,78 @@ export const BottomSide = styled.div`
 `;
 
 // ============
-// LEFT
+// LEFT - BOTTOMSIDE
 // ============
 
 export const LeftSide = styled.div`
   /* background-color: red; */
-  display: flex;
   height: 100%;
-  justify-content: end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   width: 55%;
 `;
 
-export const LeftContainer = styled.div`
-  /* background-color: red; */
-  height: 100%;
+export const Formulario = styled.form`
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70%;
   width: 80%;
 `;
 
 export const Label = styled.p`
-  font-size: 1.5rem;
-  margin-right: 78%;
-  margin-top: 2rem;
+  font-size: 0.9rem;
+`;
+
+// ============
+// INPUT
+// ============
+
+export const InputBox = styled.div`
+  /* background-color: aqua; */
+  position: relative;
 
   @media screen and (max-width: 1366px) {
-    margin-top: 1.2rem;
-    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
+export const Icon = styled.img`
+  margin: 0.55rem 0 0 0.7rem;
+  position: absolute;
+  width: 1.2rem;
+`;
+
 export const Input = styled.input`
-  background-color: #c8c8c8;
-  border-color: #c8c8c8;
-  border-radius: 0.2rem;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  color: #868686;
-  font-size: 1rem;
-  height: 1.8rem;
-  margin-top: 0.5rem;
-  padding: 3px;
-  width: 90%;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  color: #1e1e1e;
+  font-size: 1.1rem;
+  padding: 0.5rem 0 0.5rem 8%;
+  width: 80%;
 
   &:focus {
-    background-color: #cccccc;
-    color: #1e1e1e;
+    border: 1px solid #71c2b1;
     outline: none;
   }
 
   @media screen and (max-width: 1366px) {
-    margin-top: 0.2rem;
-    height: 1.4rem;
+    padding: 0.5rem 0 0.5rem 10%;
   }
 `;
 
-export const BtnGuardar = styled.button`
+export const Boton = styled.button`
   background-color: #71c2b1;
-  border-radius: 0.5rem;
   border: none;
-  box-shadow: 0px 1px 6px #bbb;
-  margin-left: 0.5rem;
-  margin-top: 1.4rem;
-  padding: 0.6rem 0.8rem;
-  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  height: 2.5rem;
+  width: 35%;
 
   &:active {
-    background-color: #fff;
+    background-color: #65b1a0;
   }
 
   @media (hover: hover) {
@@ -165,23 +164,20 @@ export const BtnGuardar = styled.button`
 `;
 
 // ============
-// RIGHT
+// RIGHT - BOTTOMSIDE
 // ============
 
 export const RightSide = styled.div`
   /* background-color: blue; */
-  align-items: flex-start;
+  align-items: center;
   display: flex;
-  flex-direction: column;
   height: 100%;
   width: 45%;
 `;
 
-export const ImagenProducto = styled.img`
+export const ImagenPerfil = styled.img`
   border-radius: 50%;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  height: 70%;
-  margin-top: 3rem;
+  height: 73%;
   width: 70%;
 
   @media screen and (max-width: 1366px) {

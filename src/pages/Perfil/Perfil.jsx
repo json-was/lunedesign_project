@@ -1,50 +1,73 @@
 import {
-  BottomSide,
-  BtnGuardar,
-  CardContainer,
-  ImagenProducto,
+  Boton,
+  BottomSideCard,
+  Card,
+  Formulario,
+  Icon,
+  ImagenPerfil,
   Input,
+  InputBox,
   Label,
-  LeftContainer,
   LeftSide,
   Main,
   RightSide,
   SpanLine,
   Title,
   TitleBox,
-  TopSide,
+  TopSideCard,
 } from "./Perfil.style";
 import calculator from "@assets/calculator.png";
+import input_user from "@assets/icons/input_user.svg";
+import input_mail from "@assets/icons/input_mail.svg";
+import input_map from "@assets/icons/input_map.svg";
+import input_phone from "@assets/icons/input_phone.svg";
 
 export const Perfil = () => {
   return (
     <Main>
-      <CardContainer>
-        <TopSide>
+      <Card>
+        <TopSideCard>
           <TitleBox>
             <SpanLine />
             <Title>Perfil</Title>
           </TitleBox>
-        </TopSide>
-        <BottomSide>
+        </TopSideCard>
+
+        <BottomSideCard>
           <LeftSide>
-            <LeftContainer>
+            <Formulario>
               <Label>Nombre:</Label>
-              <Input placeholder="ej. Nombre nombre"></Input>
+              <InputBox>
+                <Icon src={input_user} />
+                <Input type="text" placeholder="Nombre completo" />
+              </InputBox>
+
               <Label>Correo:</Label>
-              <Input placeholder="ej. example@examplelorem.com"></Input>
+              <InputBox>
+                <Icon src={input_mail} />
+                <Input type="email" placeholder="example@lorem.com" />
+              </InputBox>
+
               <Label>Dirección:</Label>
-              <Input placeholder="ej. Villa Example #451, Copiapó, Atacama"></Input>
+              <InputBox>
+                <Icon src={input_map} />
+                <Input type="text" placeholder="ej. Example villa sol #123" />
+              </InputBox>
+
               <Label>Telefono:</Label>
-              <Input placeholder="ej. +123 45678910"></Input>
-              <BtnGuardar>GUARDAR</BtnGuardar>
-            </LeftContainer>
+              <InputBox>
+                <Icon src={input_phone} />
+                <Input type="text" placeholder="+569 12345678" />
+              </InputBox>
+
+              <Boton>GUARDAR</Boton>
+            </Formulario>
           </LeftSide>
           <RightSide>
-            <ImagenProducto src={calculator} />
+            <ImagenPerfil src={calculator} />
           </RightSide>
-        </BottomSide>
-      </CardContainer>
+        </BottomSideCard>
+      </Card>
     </Main>
   );
 };

@@ -105,36 +105,36 @@ export const product = [
     id: 5,
     title: "Hola",
   },
-  {
-    id: 6,
-    title: "Hola",
-  },
-  {
-    id: 7,
-    title: "Hola",
-  },
-  {
-    id: 8,
-    title: "Hola",
-  },
-  {
-    id: 9,
-    title: "Hola",
-  },
-  {
-    id: 10,
-    title: "Hola",
-  },
-  {
-    id: 11,
-    title: "Hola",
-  },
-  {
-    id: 12,
-    title: "Hola",
-  },
-  {
-    id: 13,
-    title: "Hola",
-  },
+  // {
+  //   id: 6,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 10,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 11,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 12,
+  //   title: "Hola",
+  // },
+  // {
+  //   id: 13,
+  //   title: "Hola",
+  // },
 ];

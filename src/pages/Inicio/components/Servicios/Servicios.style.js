@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   background-color: #f8bfb3;
-  height: 80vh;
+  min-height: 80vh;
   width: 100%;
 `;
 
@@ -11,8 +11,8 @@ export const Main = styled.div`
 // ============
 
 export const TopSide = styled.div`
-  align-items: flex-end;
   /* background-color: aqua; */
+  align-items: flex-end;
   display: flex;
   height: 20%;
   width: 100%;

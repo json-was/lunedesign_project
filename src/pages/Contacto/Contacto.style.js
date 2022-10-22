@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bg_pattern from "@assets/pattern.svg";
-import bg_wave from "@assets/bg_wave_sign_in_up.svg";
+import bg_wave from "@assets/bg_wave_contact_main.svg";
 
 export const Main = styled.div`
   background: fixed repeat center/2.5rem url(${bg_pattern});

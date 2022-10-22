@@ -8,9 +8,9 @@ export const App = () => {
   return (
     <>
       <Navbar />
-      {/* <Inicio /> */}
+      <Inicio />
       {/* <Tienda /> */}
-      <Contacto />
+      {/* <Contacto /> */}
       {/* <AddModifyItem /> */}
       {/* <Perfil /> */}
       {/* <Login /> */}

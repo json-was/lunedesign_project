@@ -2,11 +2,9 @@ import styled from "styled-components";
 import bg_wave_contact from "@assets/bg_wave_contact.svg";
 
 export const Main = styled.div`
-  background-image: url(${bg_wave_contact});
-  background-position: center;
-  background-size: cover;
+  background: no-repeat center/cover url(${bg_wave_contact});
   display: flex;
-  height: 80vh;
+  min-height: 80vh;
   width: 100%;
 `;
 
@@ -46,16 +44,11 @@ export const TitleBox = styled.div`
   align-items: center;
   display: flex;
   height: auto;
-  margin-top: 30%;
+  margin-top: 35%;
   width: auto;
-`;
-
-export const Title = styled.h3`
-  font-size: 2rem;
-  font-weight: 400;
 
   @media screen and (max-width: 1366px) {
-    font-size: 1.8rem;
+    margin-top: 30%;
   }
 `;
 
@@ -70,12 +63,21 @@ export const SpanLine = styled.span`
   }
 `;
 
+export const Title = styled.h3`
+  font-size: 2rem;
+  font-weight: 400;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1.8rem;
+  }
+`;
+
 export const TextBox = styled.div`
   /* background-color: brown; */
   align-items: center;
   display: flex;
   height: auto;
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: auto;
 
   @media screen and (max-width: 1366px) {

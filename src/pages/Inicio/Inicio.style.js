@@ -2,11 +2,7 @@ import styled from "styled-components";
 import bg_pattern from "@assets/pattern.svg";
 
 export const Main = styled.div`
-  background-image: url(${bg_pattern});
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: repeat;
-  background-size: 2.5rem;
+  background: fixed repeat center/2rem url(${bg_pattern});
   display: flex;
   flex-wrap: wrap;
   height: auto;

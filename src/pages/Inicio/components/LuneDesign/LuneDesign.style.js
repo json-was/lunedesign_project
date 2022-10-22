@@ -1,17 +1,11 @@
 import styled from "styled-components";
 import bg_wave_top from "@assets/bg_wave_top.svg";
 
-// @media screen and (min-width:350px){
-
-// }
-
 export const Main = styled.div`
-  background-image: url(${bg_wave_top});
-  background-position: center;
-  background-size: cover;
+  background: no-repeat center/cover url(${bg_wave_top});
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 `;
 
@@ -23,7 +17,7 @@ export const LeftSide = styled.div`
   /* background-color: violet; */
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 100%;
   justify-content: end;
   width: 50%;
 `;
@@ -39,20 +33,14 @@ export const Logo = styled.img`
     width: 28rem;
   }
 `;
-// export const Logo = styled.img`
-//   width: 47rem;
 
-//   @media screen and (min-width:1680px) {
-
-//   }
-// `;
 // ============
 // RIGHT
 // ============
 
 export const RightSide = styled.div`
   /* background-color: aqua; */
-  height: 100vh;
+  height: 100%;
   width: 50%;
 `;
 
@@ -101,7 +89,8 @@ export const Parrafo = styled.p`
 export const Button = styled.a`
   background-color: #71c2b1;
   border-radius: 2rem;
-  box-shadow: 0px 1px 1rem #bbb;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   font-size: 1rem;
   padding: 0.7rem 5rem;
 
