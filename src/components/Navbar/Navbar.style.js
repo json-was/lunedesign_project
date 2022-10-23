@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Main = styled.div`
@@ -48,9 +49,11 @@ export const LinkList = styled.ul`
   flex-wrap: wrap;
 `;
 
-export const LinkItem = styled.li`
+export const LinkItem = styled(Link)`
+  cursor: pointer;
   list-style: none;
   margin-right: 1rem;
+  text-decoration: none;
 
   &:active {
     color: #6b6b6b;
@@ -59,7 +62,6 @@ export const LinkItem = styled.li`
   @media (hover: hover) {
     &:hover {
       color: #6b6b6b;
-      cursor: pointer;
     }
   }
 `;
@@ -79,19 +81,20 @@ export const Usuario = styled.p`
 `;
 
 export const ExitIcon = styled.img`
+  cursor: pointer;
   width: 2rem;
 
   @media (hover: hover) {
     &:hover {
-      cursor: pointer;
     }
   }
 `;
 
-export const Button = styled.a`
+export const Button = styled(Link)`
   background-color: #71c2b1;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
   margin-left: 0.5rem;
   padding: 0.6rem 0.8rem;
   text-decoration: none;
@@ -103,7 +106,6 @@ export const Button = styled.a`
   @media (hover: hover) {
     &:hover {
       background-color: #65b1a0;
-      cursor: pointer;
     }
   }
 `;

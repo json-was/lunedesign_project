@@ -24,7 +24,7 @@ export const Tienda = () => {
             <Title>Tienda</Title>
           </TitleBox>
           {status ? (
-            <BtnAddItem title="Agregar nuevo producto.">
+            <BtnAddItem to='/addModifyItem' title="Agregar nuevo producto.">
               <img src={plus_add} />
             </BtnAddItem>
           ) : (

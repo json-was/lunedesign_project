@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import bg_pattern from "@assets/pattern.svg";
 import bg_wave from "@assets/bg_wave_sign_in_up.svg";
+import { Link } from "react-router-dom";
 
 export const Main = styled.div`
   background: fixed repeat center/2.5rem url(${bg_pattern});
@@ -208,10 +209,12 @@ export const Texto = styled.p`
   font-size: 0.9rem;
 `;
 
-export const IrACuenta = styled.a`
+export const IrACuenta = styled(Link)`
   color: #3772ff;
+  cursor: pointer;
   font-size: 0.9rem;
   margin-left: 0.3rem;
+  text-decoration: none;
 
   &:active {
     color: #94b3fc;
@@ -220,7 +223,6 @@ export const IrACuenta = styled.a`
   @media (hover: hover) {
     &:hover {
       color: #94b3fc;
-      cursor: pointer;
     }
   }
 `;

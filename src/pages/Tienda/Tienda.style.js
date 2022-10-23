@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import cuadricula_green_grey from "@assets/background/cuadricula_green_grey.svg";
+import { Link } from "react-router-dom";
 
 export const Main = styled.div`
   background: fixed repeat center/2rem url(${cuadricula_green_grey});
@@ -69,7 +70,7 @@ export const SpanLine = styled.span`
   }
 `;
 
-export const BtnAddItem = styled.a`
+export const BtnAddItem = styled(Link)`
   align-items: center;
   border-radius: 10%;
   cursor: pointer;

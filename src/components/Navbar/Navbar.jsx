@@ -13,7 +13,7 @@ import {
 } from "./Navbar.style";
 
 const nombre = "Jason Alfaro";
-const logeado = false;
+const status = false;
 
 export const Navbar = () => {
   return (
@@ -21,21 +21,25 @@ export const Navbar = () => {
       <LeftSide>
         <Logo src={Logo_LuneDesign} />
         <LinkList>
-          <LinkItem>Inicio</LinkItem>
-          <LinkItem>Tienda</LinkItem>
-          <LinkItem>Sobre mi</LinkItem>
-          <LinkItem>Contacto</LinkItem>
+          <LinkItem to='/' >Inicio</LinkItem>
+          <LinkItem to='/tienda' >Tienda</LinkItem>
+          <LinkItem to='/' >Sobre mi</LinkItem>
+          <LinkItem to='/contacto' >Contacto</LinkItem>
+
+          <LinkItem to='/addmodifyItem' >--agregar item</LinkItem>
+          <LinkItem to='/profile' >--perfil</LinkItem>
+
         </LinkList>
       </LeftSide>
-      {logeado ? (
+      {status ? (
         <RightSide>
           <Usuario>Bienvenido, {nombre}</Usuario>
           <ExitIcon src={exit_icon} />
         </RightSide>
       ) : (
         <RightSide>
-          <Button>Iniciar Sesion</Button>
-          <Button>Registrarse</Button>
+          <Button  to='/login' >Iniciar Sesion</Button>
+          <Button to='/register' >Registrarse</Button>
         </RightSide>
       )}
     </Main>

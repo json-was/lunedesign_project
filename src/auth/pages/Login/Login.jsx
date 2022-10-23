@@ -43,7 +43,7 @@ export const Login = () => {
             {/* <BotonOutline>Iniciar con Google</BotonOutline> */}
             <SinCuenta>
               <Texto>¿No tienes cuenta?</Texto>
-              <NuevaCuenta>Crear cuenta</NuevaCuenta>
+              <NuevaCuenta to='/register' >Crear cuenta</NuevaCuenta>
             </SinCuenta>
           </Formulario>
         </Card>

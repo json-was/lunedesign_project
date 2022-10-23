@@ -92,7 +92,7 @@ export const Register = () => {
           <BottomSideCard>
             <ConCuenta>
               <Texto>¿Ya tienes cuenta?</Texto>
-              <IrACuenta>Iniciar sesión</IrACuenta>
+              <IrACuenta to='/login' >Iniciar sesión</IrACuenta>
             </ConCuenta>
           </BottomSideCard>
         </Card>
