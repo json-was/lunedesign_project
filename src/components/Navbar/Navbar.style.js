@@ -109,3 +109,24 @@ export const Button = styled(Link)`
     }
   }
 `;
+
+export const ButtonExit = styled.button`
+  align-items: center;
+  background-color: transparent;
+  border-radius: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5rem;
+  text-decoration: none;
+
+  &:active {
+    background-color: #65b1a0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #65b1a0;
+    }
+  }
+`;

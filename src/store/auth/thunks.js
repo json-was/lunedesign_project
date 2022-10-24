@@ -1,5 +1,9 @@
 import { checkingCredentials, login, logout } from "@store/auth";
-import { registerUserWithEmailPassword, loginWithEmailPassword } from "@firebaseSRC/providers";
+import {
+  registerUserWithEmailPassword,
+  loginWithEmailPassword,
+  logoutFirebase,
+} from "@firebaseSRC/providers";
 
 // *************************************************
 // CHECKING CREDENCIALES
@@ -13,7 +17,11 @@ export const checkingAuthentication = () => {
 // CREACION DE USUARIO CON EMAIL Y CONTRASEÑA
 // *************************************************
 
-export const startCreatingUserWithEmailPassword = ({ email, password, displayName }) => {
+export const startCreatingUserWithEmailPassword = ({
+  email,
+  password,
+  displayName,
+}) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
 
@@ -24,7 +32,7 @@ export const startCreatingUserWithEmailPassword = ({ email, password, displayNam
     });
 
     // COMPROBRACIÓN
-    if(!result.ok) return dispatch(logout(result));
+    if (!result.ok) return dispatch(logout(result));
     dispatch(login(result));
   };
 };
@@ -33,25 +41,28 @@ export const startCreatingUserWithEmailPassword = ({ email, password, displayNam
 // INICIO DE SESION CON EMAIL Y CONTRASEÑA
 // *************************************************
 
-export const startLoginWithEmailPassword = ({email, password}) => {
+export const startLoginWithEmailPassword = ({ email, password }) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
 
-    const result = await loginWithEmailPassword({email, password});
+    const result = await loginWithEmailPassword({ email, password });
 
     // COMPROBRACIÓN
-    if(!result.ok) return dispatch(logout(result));
-    dispatch(login(result))
-  }
+    if (!result.ok) return dispatch(logout(result));
+    dispatch(login(result));
+  };
 };
 
+// *************************************************
+// CIERRE DE SESION CON EMAIL Y CONTRASEÑA
+// *************************************************
 
-
-
-
-
-
-
+export const startLogout = () => {
+  return async (dispatch) => {
+    await logoutFirebase();
+    dispatch(logout());
+  };
+};
 
 // *************************************************
 // INICIO CON GUGUL

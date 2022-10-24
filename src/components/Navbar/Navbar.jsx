@@ -2,6 +2,7 @@ import Logo_LuneDesign from "@assets/Logo_LuneDesign.png";
 import exit_icon from "@assets/icons/exit_icon.svg";
 import {
   Button,
+  ButtonExit,
   ExitIcon,
   LeftSide,
   LinkItem,
@@ -11,13 +12,19 @@ import {
   RightSide,
   Usuario,
 } from "./Navbar.style";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { startLogout } from "../../store/auth/thunks";
 
 const nombre = "Jason Alfaro";
 // const status = false;
 
 export const Navbar = () => {
-  const { status } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const { status, displayName } = useSelector((state) => state.auth);
+
+  const onLogout = () => {
+    dispatch(startLogout());
+  };
 
   return (
     <Main>
@@ -32,9 +39,13 @@ export const Navbar = () => {
       </LeftSide>
       {status === "authenticated" ? (
         <RightSide>
-          <Usuario>Bienvenido, <LinkItem to='profile' >{nombre}</LinkItem></Usuario>
+          <Usuario>
+            Bienvenido, <LinkItem to="profile">{displayName}</LinkItem>
+          </Usuario>
           {/* <Usuario>Bienvenido, {nombre}</Usuario> */}
-          <ExitIcon src={exit_icon} />
+          <ButtonExit onClick={onLogout}>
+            <ExitIcon src={exit_icon} />
+          </ButtonExit>
         </RightSide>
       ) : (
         <RightSide>

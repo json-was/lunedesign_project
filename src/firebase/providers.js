@@ -46,7 +46,13 @@ export const loginWithEmailPassword = async ({ email, password }) => {
   }
 };
 
+// *************************************************
+// CIERRE DE SESION CON EMAIL Y CONTRASEÑA
+// *************************************************
 
+export const logoutFirebase = async () => {
+  return await FirebaseAuth.signOut();
+}
 
 
 
