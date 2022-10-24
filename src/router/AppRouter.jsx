@@ -1,25 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 import { Loading } from "@components";
-import { useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { FirebaseAuth } from "../firebase/config";
-import { login, logout } from "../store/auth/authSlice";
 import { PublicRoute, PrivateRoute } from "@router";
+import { useCheckAuth } from "@hooks";
 
 export const AppRouter = () => {
-  const { status } = useSelector((state) => state.auth);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    onAuthStateChanged(FirebaseAuth, async (user) => {
-      if (!user) return dispatch(logout());
-
-      const {uid, displayName, email} = user;
-      dispatch(login({uid, displayName, email}));
-    });
-  }, []);
+  const status = useCheckAuth();
 
   if (status === "checking") {
     return <Loading />;
@@ -27,11 +12,11 @@ export const AppRouter = () => {
 
   return (
     <Routes>
-      {
-        status === 'authenticated'
-          ? <Route path="/*" element={<PrivateRoute />} />
-          : <Route path="/*" element={<PublicRoute />} />
-      }
+      {status === "authenticated" ? (
+        <Route path="/*" element={<PrivateRoute />} />
+      ) : (
+        <Route path="/*" element={<PublicRoute />} />
+      )}
     </Routes>
   );
 };
