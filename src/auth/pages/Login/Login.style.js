@@ -7,10 +7,6 @@ export const Main = styled.div`
   background: fixed repeat center/2.5rem url(${bg_pattern});
   height: 95vh;
   width: 100%;
-
-  @media screen and (max-width: 1366px) {
-    height: 120vh;
-  }
 `;
 
 // ============
@@ -18,7 +14,7 @@ export const Main = styled.div`
 // ============
 
 export const Wave = styled.div`
-  align-self: center;
+  align-items: center;
   background: no-repeat center/cover url(${bg_wave});
   display: flex;
   height: 100%;
@@ -39,13 +35,14 @@ export const Card = styled.div`
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   display: flex;
   flex-direction: column;
-  height: 35rem;
-  margin-top: 13rem;
-  width: 35rem;
+  margin-top: 6rem;
+  height: 30rem;
+  width: 30rem;
 
   @media screen and (max-width: 1366px) {
-    margin-top: 10rem;
-    height: 30rem;
+    height: 25rem;
+    margin-top: 4.5rem;
+    width: 25rem;
   }
 `;
 
@@ -55,12 +52,13 @@ export const Card = styled.div`
 
 export const Title = styled.h2`
   border-bottom: 2px solid #f8bfb3;
-  font-size: 4rem;
+  font-size: 2.8rem;
   font-weight: 400;
-  margin: 3rem 0;
+  margin: 10% 0;
 
   @media screen and (max-width: 1366px) {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin: 2rem 0;
   }
 `;
 
@@ -72,12 +70,12 @@ export const Formulario = styled.form`
   /* background-color: aqua; */
   display: flex;
   flex-direction: column;
-  height: 45%;
+  height: 60%;
   justify-content: space-between;
   width: 80%;
 
   @media screen and (max-width: 1366px) {
-    height: 50%;
+    height: 65%;
   }
 `;
 
@@ -102,13 +100,29 @@ export const Input = styled.input`
   border: 1px solid #f8bfb3;
   color: #1e1e1e;
   font-size: 1.1rem;
-  padding: 0.5rem 0 0.5rem 8%;
+  padding: 0.5rem 0 0.5rem 10%;
   width: 91.5%;
 
   &:focus {
     border: 1px solid #71c2b1;
     outline: none;
   }
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1rem;
+    padding: 0.5rem 0 0.5rem 12%;
+  }
+`;
+
+export const Obligatorio = styled.p`
+  color: #ff2400;
+  font-size: 0.7rem;
+  margin-left: 0.8rem;
+
+  /*
+  @media screen and (max-width: 1366px) {
+    margin-bottom: 0.5rem;
+  } */
 `;
 
 // ============
@@ -148,12 +162,28 @@ export const BotonSolid = styled.button`
   border: none;
   color: #fff;
   ${botonParams}
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+  }
 `;
 
 export const BotonOutline = styled.button`
   background-color: #fff;
   border: 1px solid #71c2b1;
   ${botonParams}
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+  }
 `;
 
 // ============
@@ -173,7 +203,6 @@ export const Texto = styled.p`
 
 export const NuevaCuenta = styled(Link)`
   color: #3772ff;
-  cursor: pointer;
   font-size: 0.9rem;
   margin-left: 0.3rem;
   text-decoration: none;
@@ -185,6 +214,7 @@ export const NuevaCuenta = styled(Link)`
   @media (hover: hover) {
     &:hover {
       color: #94b3fc;
+      cursor: pointer;
     }
   }
 `;

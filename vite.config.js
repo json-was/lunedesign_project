@@ -8,12 +8,15 @@ export default defineConfig({
   resolve:{
     alias:{
       '@assets': path.resolve(__dirname, './src/assets'),
+      '@auth': path.resolve(__dirname, './src/auth'),
       '@components': path.resolve(__dirname, './src/components'),
       '@data': path.resolve(__dirname, './src/data'),
+      '@firebaseSRC': path.resolve(__dirname, './src/firebase'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@redux': path.resolve(__dirname, './src/redux'),
-      '@auth': path.resolve(__dirname, './src/auth'),
+      '@router': path.resolve(__dirname, './src/router'),
+      '@store': path.resolve(__dirname, './src/store'),
     }
   },
   plugins: [react()]

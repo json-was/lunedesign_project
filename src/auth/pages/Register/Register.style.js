@@ -7,10 +7,6 @@ export const Main = styled.div`
   background: fixed repeat center/2.5rem url(${bg_pattern});
   height: 95vh;
   width: 100%;
-
-  @media screen and (max-width: 1366px) {
-    height: 130vh;
-  }
 `;
 
 // ============
@@ -18,7 +14,7 @@ export const Main = styled.div`
 // ============
 
 export const Wave = styled.div`
-  align-self: center;
+  align-items: center;
   background: no-repeat center/cover url(${bg_wave});
   display: flex;
   height: 100%;
@@ -38,13 +34,14 @@ export const Card = styled.div`
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 6rem;
   height: 40rem;
-  margin-top: 13rem;
   width: 70rem;
 
   @media screen and (max-width: 1366px) {
-    height: 35rem;
-    margin-top: 10rem;
+    height: 28rem;
+    margin-top: 4.5rem;
+    width: 60rem;
   }
 `;
 
@@ -56,19 +53,18 @@ export const TopSideCard = styled.div`
   /* background-color: blue; */
   align-items: center;
   display: flex;
-  height: 25%;
+  height: 20%;
   justify-content: center;
   width: 100%;
 `;
 
 export const Title = styled.h2`
   border-bottom: 2px solid #f8bfb3;
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  margin: 3rem 0;
 
   @media screen and (max-width: 1366px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `;
 
@@ -80,7 +76,7 @@ export const Formulario = styled.form`
   /* background-color: aqua; */
   display: flex;
   flex-wrap: wrap;
-  height: 65%;
+  height: 70%;
   width: 100%;
 `;
 
@@ -150,16 +146,17 @@ export const Input = styled.input`
     border: 1px solid #71c2b1;
     outline: none;
   }
+
+  @media screen and (max-width: 1366px) {
+    font-size: 1rem;
+    padding: 0.5rem 0 0.5rem 10%;
+  }
 `;
 
 export const Obligatorio = styled.p`
-  color: #868686;
+  color: ${(props) => (props.variant === "errorColor" ? "#ff2400" : "#868686")};
   font-size: 0.7rem;
   margin: 0.5rem 0 0 0.8rem;
-
-  @media screen and (max-width: 1366px) {
-    margin-bottom: 0.5rem;
-  }
 `;
 
 // ============
@@ -211,7 +208,6 @@ export const Texto = styled.p`
 
 export const IrACuenta = styled(Link)`
   color: #3772ff;
-  cursor: pointer;
   font-size: 0.9rem;
   margin-left: 0.3rem;
   text-decoration: none;
@@ -223,6 +219,7 @@ export const IrACuenta = styled(Link)`
   @media (hover: hover) {
     &:hover {
       color: #94b3fc;
+      cursor: pointer;
     }
   }
 `;
