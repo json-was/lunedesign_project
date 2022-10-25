@@ -118,11 +118,6 @@ export const Obligatorio = styled.p`
   color: #ff2400;
   font-size: 0.7rem;
   margin-left: 0.8rem;
-
-  /*
-  @media screen and (max-width: 1366px) {
-    margin-bottom: 0.5rem;
-  } */
 `;
 
 // ============
@@ -172,19 +167,19 @@ export const BotonSolid = styled.button`
   }
 `;
 
-export const BotonOutline = styled.button`
-  background-color: #fff;
-  border: 1px solid #71c2b1;
-  ${botonParams}
+// export const BotonOutline = styled.button`
+//   background-color: #fff;
+//   border: 1px solid #71c2b1;
+//   ${botonParams}
 
-  &:disabled,
-  &[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
-    cursor: default;
-  }
-`;
+//   &:disabled,
+//   &[disabled] {
+//     border: 1px solid #999999;
+//     background-color: #cccccc;
+//     color: #666666;
+//     cursor: default;
+//   }
+// `;
 
 // ============
 // BOTTOM

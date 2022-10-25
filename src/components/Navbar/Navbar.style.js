@@ -78,6 +78,12 @@ export const RightSide = styled.div`
 
 export const Usuario = styled.p`
   margin-right: 1rem;
+
+  a {
+    color: #3772ff;
+    font-size: 1.1rem;
+    margin-left: 0.2rem;
+  }
 `;
 
 export const ExitIcon = styled.img`

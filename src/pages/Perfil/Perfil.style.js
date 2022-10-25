@@ -6,7 +6,7 @@ export const Main = styled.main`
   background: fixed repeat center/2rem url(${cuadricula_green_grey});
   display: flex;
   justify-content: center;
-  min-height: 95vh;
+  height: 95vh;
   width: 100%;
 `;
 
@@ -19,12 +19,12 @@ export const Card = styled.div`
   border-radius: 1rem;
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   height: 40rem;
-  margin-top: 5rem;
+  margin-top: 6rem;
   width: 65%;
 
   @media screen and (max-width: 1366px) {
-    height: 30rem;
-    margin: 7rem 0 3rem 0;
+    height: 28rem;
+    margin-top: 4.5rem;
   }
 `;
 
@@ -98,7 +98,7 @@ export const Formulario = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 70%;
+  height: 80%;
   width: 80%;
 `;
 
@@ -139,6 +139,7 @@ export const Input = styled.input`
   }
 
   @media screen and (max-width: 1366px) {
+    font-size: 1rem;
     padding: 0.5rem 0 0.5rem 10%;
   }
 `;
@@ -177,10 +178,11 @@ export const RightSide = styled.div`
 
 export const ImagenPerfil = styled.img`
   border-radius: 50%;
-  height: 73%;
-  width: 70%;
+  height: 72%;
+  width: 72%;
 
   @media screen and (max-width: 1366px) {
     width: 80%;
+    height: 80%;
   }
 `;

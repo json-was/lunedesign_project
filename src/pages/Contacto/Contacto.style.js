@@ -95,7 +95,7 @@ export const TextBox = styled.div`
 `;
 
 export const IconMail = styled.img`
-  width: 3rem;
+  width: 2.5rem;
 
   @media screen and (max-width: 1366px) {
     width: 2rem;

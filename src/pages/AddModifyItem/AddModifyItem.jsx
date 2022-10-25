@@ -1,12 +1,12 @@
 import {
-  BottomSide,
-  BtnGuardar,
+  Boton,
+  BottomSideCard,
   CardContainer,
+  Formulario,
   ImagenProducto,
   Input,
   InputBox,
   Label,
-  LeftContainer,
   LeftSide,
   Main,
   RightSide,
@@ -30,23 +30,23 @@ export const AddModifyItem = () => {
             <Title>{modify ? "Modificar" : "Agregar"} producto</Title>
           </TitleBox>
         </TopSide>
-        <BottomSide>
+        <BottomSideCard>
           <LeftSide>
-            <LeftContainer>
+            <Formulario>
               <Label>Titulo:</Label>
               <Input placeholder="ej. Tarjetas, Pack fotografia"></Input>
               <Label>Precio:</Label>
               <Input placeholder="ej. 590000"></Input>
               <Label>Descripción:</Label>
               <InputBox placeholder="ej. Lo que contiene ese producto es una gran cantidad de trabajo honesto."></InputBox>
-              <BtnGuardar>GUARDAR</BtnGuardar>
-            </LeftContainer>
+              <Boton>GUARDAR</Boton>
+            </Formulario>
           </LeftSide>
           <RightSide>
             <ImagenProducto src={calculator} />
-            <BtnGuardar>SUBIR IMAGEN</BtnGuardar>
+            <Boton>SUBIR IMAGEN</Boton>
           </RightSide>
-        </BottomSide>
+        </BottomSideCard>
       </CardContainer>
     </Main>
   );
