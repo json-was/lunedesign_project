@@ -30,7 +30,7 @@ import { startCreatingUserWithEmailPassword } from "@store/auth";
 const defaultValues = {
   email: "",
   password: "",
-  displayName: "",
+  name: "",
   direccion: "",
   numberPhone: "",
   confirmPassword: "",
@@ -64,11 +64,11 @@ export const Register = () => {
                 <Input
                   type="text"
                   placeholder="Nombre completo"
-                  {...register("displayName", {
+                  {...register("name", {
                     required: true,
                   })}
                 />
-                {errors.displayName ? (
+                {errors.name ? (
                   <Obligatorio variant="errorColor">
                     El nombre es obligatorio.
                   </Obligatorio>

@@ -12,12 +12,34 @@ import {
 } from "./Tienda.style";
 import plus_add from "@assets/icons/new_product.svg";
 import { useSelector } from "react-redux";
+import { FirebaseDB } from "../../firebase/config";
+import { collection, getDocs } from "firebase/firestore/lite";
+import { useEffect, useState } from "react";
 
 // const status = true;
 
 export const Tienda = () => {
+  const { status } = useSelector((state) => state.auth);
 
-  const { status } = useSelector((state) => state.auth)
+  // RENDERIZADOR DE PRODUCTOS
+  const [listaProductos, setListaProductos] = useState([]);
+  useEffect(() => {
+    const getLista = async () => {
+      try {
+        const productListId = [];
+        const datos = await getDocs(collection(FirebaseDB, "productos"));
+        datos.forEach((datos) => {
+          const newItem = { id: datos.id, ...datos.data() };
+          productListId.push(newItem);
+        });
+        console.log(productListId);
+        setListaProductos(productListId);
+      } catch (error) {
+        console.log("error en cargar productos");
+      }
+    };
+    getLista();
+  }, []);
 
   return (
     <Main>
@@ -27,8 +49,8 @@ export const Tienda = () => {
             <SpanLine />
             <Title>Tienda</Title>
           </TitleBox>
-          {status === 'authenticated' ? (
-            <BtnAddItem to='/addModifyItem' title="Agregar nuevo producto.">
+          {status === "authenticated" ? (
+            <BtnAddItem to="/addModifyItem" title="Agregar nuevo producto.">
               <img src={plus_add} />
             </BtnAddItem>
           ) : (
@@ -36,7 +58,7 @@ export const Tienda = () => {
           )}
         </TopSide>
         <BottomSide>
-          {product.map((data) => (
+          {listaProductos.map((data) => (
             <Card key={data.id} {...data} />
           ))}
         </BottomSide>

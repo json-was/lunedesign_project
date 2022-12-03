@@ -12,8 +12,8 @@ export const useCheckAuth = () => {
     onAuthStateChanged(FirebaseAuth, async (user) => {
       if (!user) return dispatch(logout());
 
-      const { uid, displayName, email } = user;
-      dispatch(login({ uid, displayName, email }));
+      const { uid, name, email } = user;
+      dispatch(login({ uid, name, email }));
     });
   }, []);
 

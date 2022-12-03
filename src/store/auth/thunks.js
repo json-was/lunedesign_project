@@ -20,7 +20,7 @@ export const checkingAuthentication = () => {
 export const startCreatingUserWithEmailPassword = ({
   email,
   password,
-  displayName,
+  name,
 }) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
@@ -28,7 +28,7 @@ export const startCreatingUserWithEmailPassword = ({
     const result = await registerUserWithEmailPassword({
       email,
       password,
-      displayName,
+      name,
     });
 
     // COMPROBRACIÓN

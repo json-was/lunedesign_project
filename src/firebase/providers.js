@@ -9,17 +9,17 @@ import { FirebaseAuth } from "./config";
 // CREACION DE USUARIO CON EMAIL Y CONTRASEÑA
 // *************************************************
 
-export const registerUserWithEmailPassword = async ({ email, password, displayName }) => {
+export const registerUserWithEmailPassword = async ({ email, password, name }) => {
   try {
     const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password);
     const { uid } = resp.user;
-    await updateProfile(FirebaseAuth.currentUser, { displayName });
+    await updateProfile(FirebaseAuth.currentUser, { name });
 
     return {
       ok: true,
       uid,
       email,
-      displayName,
+      name,
     };
   } catch (error) {
     return (console.log(error), { ok: false, errorMessage: error.message });
@@ -33,13 +33,13 @@ export const registerUserWithEmailPassword = async ({ email, password, displayNa
 export const loginWithEmailPassword = async ({ email, password }) => {
   try {
     const resp = await signInWithEmailAndPassword(FirebaseAuth, email, password);
-    const { uid, displayName } = resp.user;
+    const { uid, name } = resp.user;
 
     return {
       ok: true,
       uid,
       email,
-      displayName,
+      name,
     };
   } catch (error) {
     return (console.log(error), { ok: false, errorMessage: error.message });
@@ -61,11 +61,11 @@ export const logoutFirebase = async () => {
 // export const singInWithGoogle = async () => {
 //   try {
 //     const result = await signInWithPopup(FirebaseAuth, googleProvider);
-//     const { displayName, email, photoURL, uid } = result.user;
+//     const { name, email, photoURL, uid } = result.user;
 
 //     return {
 //       ok: true,
-//       displayName,
+//       name,
 //       email,
 //       photoURL,
 //       uid,

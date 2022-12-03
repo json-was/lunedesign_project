@@ -20,7 +20,7 @@ const nombre = "Jason Alfaro";
 
 export const Navbar = () => {
   const dispatch = useDispatch();
-  const { status, displayName } = useSelector((state) => state.auth);
+  const { status, name } = useSelector((state) => state.auth);
 
   const onLogout = () => {
     dispatch(startLogout());
@@ -40,7 +40,7 @@ export const Navbar = () => {
       {status === "authenticated" ? (
         <RightSide>
           <Usuario>
-            Bienvenido, <LinkItem to="profile">{displayName}</LinkItem>
+            Bienvenido, <LinkItem to="profile">{name}</LinkItem>
           </Usuario>
           {/* <Usuario>Bienvenido, {nombre}</Usuario> */}
           <ButtonExit onClick={onLogout}>
