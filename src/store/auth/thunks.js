@@ -25,9 +25,10 @@ export const startCreatingUserWithEmailPassword = (data) => {
     dispatch(checkingCredentials());
 
     const result = await registerUserWithEmailPassword(data);
-    dispatch(createNewUserEnBD(data, result.uid))
+    dispatch(createNewUserEnBD(data, result.uid));
 
-    dispatch(logout(result));
+    if (!result.ok) return dispatch(startLogout());
+    dispatch(login(result));
   };
 };
 
@@ -37,17 +38,20 @@ export const startCreatingUserWithEmailPassword = (data) => {
 
 export const createNewUserEnBD = (data, uid) => {
   return async (dispatch) => {
-    const {name, numberPhone, direccion} = data;
+    const { name, numberPhone, direccion } = data;
 
     const newUser = {
       name: name,
       numberPhone: numberPhone,
       direccion: direccion,
-      rol: 'Cliente',
-    }
+      rol: "Cliente",
+      imagen:
+        "https://res.cloudinary.com/dssccuwn8/image/upload/v1670099198/assets/user_img_d9ktvt.png",
+    };
 
     const docRef = doc(FirebaseDB, `users/${uid}`);
     setDoc(docRef, newUser);
+    dispatch(setDatos(newUser));
   };
 };
 
@@ -64,7 +68,6 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
     // COMPROBRACIÓN
     if (!result.ok) return dispatch(logout(result));
     dispatch(login(result));
-    dispatch(findByIdUserData(result.uid));
   };
 };
 
@@ -76,7 +79,12 @@ export const findByIdUserData = (uid) => {
   return async (dispatch) => {
     const newDoc = doc(FirebaseDB, `users/${uid}`);
     const datos = await getDoc(newDoc);
-    dispatch(setDatos(datos.data()));
+    // console.log(datos.data());
+    try {
+      dispatch(setDatos(datos.data()));
+    } catch (error) {
+      // console.log("no me encuentro");
+    }
   };
 };
 

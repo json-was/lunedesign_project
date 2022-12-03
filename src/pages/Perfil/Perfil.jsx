@@ -4,6 +4,7 @@ import {
   Card,
   Formulario,
   Icon,
+  ImagenContainer,
   ImagenPerfil,
   Input,
   InputBox,
@@ -24,7 +25,7 @@ import input_phone from "@assets/icons/input_phone.svg";
 import { useSelector } from "react-redux";
 
 export const Perfil = () => {
-  const {name, email, direccion, numberPhone} = useSelector(state => state.auth);
+  const {name, email, direccion, numberPhone, imagen} = useSelector(state => state.auth);
 
   return (
     <Main>
@@ -83,7 +84,9 @@ export const Perfil = () => {
             </Formulario>
           </LeftSide>
           <RightSide>
-            <ImagenPerfil src={calculator} />
+            <ImagenContainer>
+              <ImagenPerfil src={imagen} />
+            </ImagenContainer>
           </RightSide>
         </BottomSideCard>
       </Card>

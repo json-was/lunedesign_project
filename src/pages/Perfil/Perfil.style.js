@@ -176,13 +176,22 @@ export const RightSide = styled.div`
   width: 45%;
 `;
 
-export const ImagenPerfil = styled.img`
+export const ImagenContainer = styled.div`
   border-radius: 50%;
   height: 72%;
   width: 72%;
+  border: 1px solid green;
 
   @media screen and (max-width: 1366px) {
     width: 80%;
     height: 80%;
   }
+`;
+
+export const ImagenPerfil = styled.img`
+  /* border-radius: 50%;
+  height: 72%;
+  width: 72%; */
+  width: 100%;
+  height: 100%;
 `;

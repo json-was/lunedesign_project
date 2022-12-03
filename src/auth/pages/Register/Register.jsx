@@ -47,6 +47,7 @@ export const Register = () => {
   const onSubmit = (data) => {
     if (data.password !== data.confirmPassword) return alert('Las contraseñas deben coincidir.');
     dispatch(startCreatingUserWithEmailPassword(data));
+    // console.log(data);
   };
 
   return (

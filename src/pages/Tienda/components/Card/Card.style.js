@@ -14,7 +14,7 @@ export const CardBox = styled.div`
   height: 25rem;
   justify-content: space-between;
   margin: 0.8rem;
-  width: 22rem;
+  width: 20rem;
 `;
 
 // ============
@@ -26,15 +26,34 @@ export const ImgBox = styled.a`
   align-items: center;
   cursor: pointer;
   display: flex;
-  height: 80%;
+  height: 75%;
   justify-content: center;
   width: 100%;
 
-  img {
+  /* img {
     border-radius: 3px;
     height: 93%;
     margin-top: 3%;
     width: 92%;
+    border: 1px solid red;
+
+  } */
+`;
+
+export const ImagenP = styled.div`
+  /* background-color: red; */
+  /* align-items: center; */
+  /* cursor: pointer; */
+  /* display: flex; */
+  height: 90%;
+  /* justify-content: center; */
+  width: 90%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid green; */
+
   }
 `;
 

@@ -30,6 +30,7 @@ export const Tienda = () => {
           productListId.push(newItem);
         });
         setListaProductos(productListId);
+        // console.log('hola');
       } catch (error) {
         console.log("error en cargar productos");
       }

@@ -10,6 +10,7 @@ export const authSlice = createSlice({
     direccion: null,
     numberPhone: null,
     rol: null,
+    imagen: null,
     errorMessage: null,
   },
 
@@ -28,6 +29,7 @@ export const authSlice = createSlice({
       state.direccion = null;
       state.numberPhone = null;
       state.rol = null;
+      state.imagen = null;
       state.errorMessage = payload?.errorMessage;
     },
     checkingCredentials: (state) => {
@@ -38,6 +40,7 @@ export const authSlice = createSlice({
       state.direccion = payload.direccion;
       state.numberPhone = payload.numberPhone;
       state.rol = payload.rol;
+      state.imagen = payload.imagen;
     },
   },
 });
