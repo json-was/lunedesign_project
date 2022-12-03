@@ -6,7 +6,7 @@ import {
 } from "@firebaseSRC/providers";
 import { setDatos } from "./authSlice";
 import { FirebaseDB } from "../../firebase/config";
-import { doc, getDoc } from "firebase/firestore/lite";
+import { doc, getDoc, setDoc } from "firebase/firestore/lite";
 
 // *************************************************
 // CHECKING CREDENCIALES
@@ -20,19 +20,34 @@ export const checkingAuthentication = () => {
 // CREACION DE USUARIO CON EMAIL Y CONTRASEÑA
 // *************************************************
 
-export const startCreatingUserWithEmailPassword = ({ email, password }) => {
+export const startCreatingUserWithEmailPassword = (data) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
 
-    const result = await registerUserWithEmailPassword({
-      email,
-      password,
-    });
+    const result = await registerUserWithEmailPassword(data);
+    dispatch(createNewUserEnBD(data, result.uid))
 
-    // COMPROBRACIÓN
-    if (!result.ok) return dispatch(logout(result));
-    dispatch(login(result));
-    dispatch(findByIdUserData(result.uid));
+    dispatch(logout(result));
+  };
+};
+
+// *************************************************
+// CREACION DE USUARIO EN BASE DE DATOS
+// *************************************************
+
+export const createNewUserEnBD = (data, uid) => {
+  return async (dispatch) => {
+    const {name, numberPhone, direccion} = data;
+
+    const newUser = {
+      name: name,
+      numberPhone: numberPhone,
+      direccion: direccion,
+      rol: 'Cliente',
+    }
+
+    const docRef = doc(FirebaseDB, `users/${uid}`);
+    setDoc(docRef, newUser);
   };
 };
 
@@ -49,6 +64,7 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
     // COMPROBRACIÓN
     if (!result.ok) return dispatch(logout(result));
     dispatch(login(result));
+    dispatch(findByIdUserData(result.uid));
   };
 };
 

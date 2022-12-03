@@ -21,8 +21,11 @@ import input_user from "@assets/icons/input_user.svg";
 import input_mail from "@assets/icons/input_mail.svg";
 import input_map from "@assets/icons/input_map.svg";
 import input_phone from "@assets/icons/input_phone.svg";
+import { useSelector } from "react-redux";
 
 export const Perfil = () => {
+  const {name, email, direccion, numberPhone} = useSelector(state => state.auth);
+
   return (
     <Main>
       <Card>
@@ -39,28 +42,44 @@ export const Perfil = () => {
               <Label>Nombre:</Label>
               <InputBox>
                 <Icon src={input_user} />
-                <Input type="text" placeholder="Nombre completo" />
+                <Input
+                  type="text"
+                  placeholder={name}
+                  disabled
+                />
               </InputBox>
 
               <Label>Correo:</Label>
               <InputBox>
                 <Icon src={input_mail} />
-                <Input type="email" placeholder="example@lorem.com" />
+                <Input
+                  type="text"
+                  placeholder={email}
+                  disabled
+                />
               </InputBox>
 
               <Label>Dirección:</Label>
               <InputBox>
                 <Icon src={input_map} />
-                <Input type="text" placeholder="ej. Example villa sol #123" />
+                <Input
+                  type="text"
+                  placeholder={direccion}
+                  disabled
+                />
               </InputBox>
 
               <Label>Telefono:</Label>
               <InputBox>
                 <Icon src={input_phone} />
-                <Input type="text" placeholder="+569 12345678" />
+                <Input
+                  type="number"
+                  placeholder={numberPhone}
+                  disabled
+                />
               </InputBox>
 
-              <Boton>GUARDAR</Boton>
+              {/* <Boton>GUARDAR</Boton> */}
             </Formulario>
           </LeftSide>
           <RightSide>

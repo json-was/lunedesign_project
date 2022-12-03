@@ -43,6 +43,7 @@ export const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues });
+
   const onSubmit = (data) => {
     if (data.password !== data.confirmPassword) return alert('Las contraseñas deben coincidir.');
     dispatch(startCreatingUserWithEmailPassword(data));
