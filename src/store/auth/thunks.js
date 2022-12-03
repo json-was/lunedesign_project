@@ -4,6 +4,9 @@ import {
   loginWithEmailPassword,
   logoutFirebase,
 } from "@firebaseSRC/providers";
+import { setDatos } from "./authSlice";
+import { FirebaseDB } from "../../firebase/config";
+import { doc, getDoc } from "firebase/firestore/lite";
 
 // *************************************************
 // CHECKING CREDENCIALES
@@ -17,23 +20,19 @@ export const checkingAuthentication = () => {
 // CREACION DE USUARIO CON EMAIL Y CONTRASEÑA
 // *************************************************
 
-export const startCreatingUserWithEmailPassword = ({
-  email,
-  password,
-  name,
-}) => {
+export const startCreatingUserWithEmailPassword = ({ email, password }) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
 
     const result = await registerUserWithEmailPassword({
       email,
       password,
-      name,
     });
 
     // COMPROBRACIÓN
     if (!result.ok) return dispatch(logout(result));
     dispatch(login(result));
+    dispatch(findByIdUserData(result.uid));
   };
 };
 
@@ -50,6 +49,18 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
     // COMPROBRACIÓN
     if (!result.ok) return dispatch(logout(result));
     dispatch(login(result));
+  };
+};
+
+// *************************************************
+// BUSQUEDA DE USUARIO EN FIREBASE
+// *************************************************
+
+export const findByIdUserData = (uid) => {
+  return async (dispatch) => {
+    const newDoc = doc(FirebaseDB, `users/${uid}`);
+    const datos = await getDoc(newDoc);
+    dispatch(setDatos(datos.data()));
   };
 };
 

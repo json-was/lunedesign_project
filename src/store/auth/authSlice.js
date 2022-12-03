@@ -9,6 +9,7 @@ export const authSlice = createSlice({
     name: null,
     direccion: null,
     numberPhone: null,
+    rol: null,
     errorMessage: null,
   },
 
@@ -17,12 +18,8 @@ export const authSlice = createSlice({
       state.status = "authenticated"; // checking, not-authenticated, authenticated
       state.uid = payload.uid;
       state.email = payload.email;
-      state.name = payload.name;
-      state.direccion = payload.direccion;
-      state.numberPhone = payload.numberPhone;
       state.errorMessage = null;
     },
-
     logout: (state, { payload }) => {
       state.status = "not-authenticated"; // checking, not-authenticated, authenticated
       state.uid = null;
@@ -30,13 +27,20 @@ export const authSlice = createSlice({
       state.name = null;
       state.direccion = null;
       state.numberPhone = null;
+      state.rol = null;
       state.errorMessage = payload?.errorMessage;
     },
-
     checkingCredentials: (state) => {
       state.status = "checking";
+    },
+    setDatos: (state, { payload }) => {
+      state.name = payload.name;
+      state.direccion = payload.direccion;
+      state.numberPhone = payload.numberPhone;
+      state.rol = payload.rol;
     },
   },
 });
 
-export const { login, logout, checkingCredentials } = authSlice.actions;
+export const { login, logout, checkingCredentials, setDatos } =
+  authSlice.actions;

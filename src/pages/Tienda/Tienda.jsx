@@ -1,4 +1,3 @@
-import { product } from "@data/datacard";
 import { Card } from "./components";
 import {
   BottomSide,
@@ -16,10 +15,8 @@ import { FirebaseDB } from "../../firebase/config";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 
-// const status = true;
-
 export const Tienda = () => {
-  const { status } = useSelector((state) => state.auth);
+  const { rol } = useSelector((state) => state.auth);
 
   // RENDERIZADOR DE PRODUCTOS
   const [listaProductos, setListaProductos] = useState([]);
@@ -32,7 +29,6 @@ export const Tienda = () => {
           const newItem = { id: datos.id, ...datos.data() };
           productListId.push(newItem);
         });
-        console.log(productListId);
         setListaProductos(productListId);
       } catch (error) {
         console.log("error en cargar productos");
@@ -49,7 +45,7 @@ export const Tienda = () => {
             <SpanLine />
             <Title>Tienda</Title>
           </TitleBox>
-          {status === "authenticated" ? (
+          {rol === "Administrador" ? (
             <BtnAddItem to="/addModifyItem" title="Agregar nuevo producto.">
               <img src={plus_add} />
             </BtnAddItem>

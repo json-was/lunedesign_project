@@ -15,9 +15,6 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../store/auth/thunks";
 
-const nombre = "Jason Alfaro";
-// const status = false;
-
 export const Navbar = () => {
   const dispatch = useDispatch();
   const { status, name } = useSelector((state) => state.auth);

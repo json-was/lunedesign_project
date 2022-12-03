@@ -12,10 +12,11 @@ import {
 import carritoDelete from "@assets/icons/trash_carrito.svg";
 import carritoPlus from "@assets/icons/plus_carrito.svg";
 import calculator from "@assets/calculator.png";
-
-const isAdmin = true;
+import { useSelector } from "react-redux";
 
 export const Card = (data) => {
+  const { rol } = useSelector((state) => state.auth);
+
   return (
     <CardBox>
       {/* SECTION 1 */}
@@ -26,9 +27,9 @@ export const Card = (data) => {
       <InfoBox>{data.title}</InfoBox>
       {/* SECTION3 */}
       <PrecioBox>
-        <PrecioNum>$000.000.000</PrecioNum>
+        <PrecioNum>{`$ ${data.precio}`}</PrecioNum>
         <Opciones>
-          {isAdmin ? (
+          {rol === "Administrador" ? (
             <DeleteCarrito>
               <img src={carritoDelete} />
             </DeleteCarrito>

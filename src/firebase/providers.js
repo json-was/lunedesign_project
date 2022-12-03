@@ -1,7 +1,6 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile,
 } from "firebase/auth";
 import { FirebaseAuth } from "./config";
 
@@ -9,17 +8,15 @@ import { FirebaseAuth } from "./config";
 // CREACION DE USUARIO CON EMAIL Y CONTRASEÑA
 // *************************************************
 
-export const registerUserWithEmailPassword = async ({ email, password, name }) => {
+export const registerUserWithEmailPassword = async ({ email, password }) => {
   try {
     const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password);
     const { uid } = resp.user;
-    await updateProfile(FirebaseAuth.currentUser, { name });
 
     return {
       ok: true,
       uid,
       email,
-      name,
     };
   } catch (error) {
     return (console.log(error), { ok: false, errorMessage: error.message });
@@ -33,13 +30,12 @@ export const registerUserWithEmailPassword = async ({ email, password, name }) =
 export const loginWithEmailPassword = async ({ email, password }) => {
   try {
     const resp = await signInWithEmailAndPassword(FirebaseAuth, email, password);
-    const { uid, name } = resp.user;
+    const { uid } = resp.user;
 
     return {
       ok: true,
       uid,
       email,
-      name,
     };
   } catch (error) {
     return (console.log(error), { ok: false, errorMessage: error.message });
