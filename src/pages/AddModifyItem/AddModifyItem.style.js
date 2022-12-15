@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import cuadricula_green_grey from "@assets/background/cuadricula_green_grey.svg";
+import { Link } from "react-router-dom";
 
 export const Main = styled.div`
   align-items: center;
@@ -143,14 +144,16 @@ export const InputBox = styled.textarea`
   }
 `;
 
-export const Boton = styled.button`
+export const BotonGuardar = styled(Link)`
   background-color: #71c2b1;
   border: none;
   color: #fff;
   font-size: 1rem;
-  height: 2.5rem;
-  width: 35%;
+  padding: 0.6rem 0.8rem;
+  width: 25%;
   margin-top: 0.5rem;
+  text-decoration: none;
+  text-align: center;
 
   &:active {
     background-color: #65b1a0;
@@ -185,5 +188,27 @@ export const ImagenProducto = styled.img`
 
   @media screen and (max-width: 1366px) {
     height: 66.5%;
+  }
+`;
+
+export const Boton = styled.button`
+  background-color: #71c2b1;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.6rem 0.8rem;
+  /* height: 2.5rem; */
+  width: 40%;
+  margin-top: 0.5rem;
+
+  &:active {
+    background-color: #65b1a0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #65b1a0;
+      cursor: pointer;
+    }
   }
 `;

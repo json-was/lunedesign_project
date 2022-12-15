@@ -3,9 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 export const productoActivoSlice = createSlice({
   name: "productoActivo",
   initialState: {
-    // isSaving: false,
-    // productos: [],
-    // active: null,
     id: null,
     title: null,
     description: null,
@@ -20,8 +17,6 @@ export const productoActivoSlice = createSlice({
       state.description = payload.description;
       state.precio = payload.precio;
       state.imagen = payload.imagen;
-      // state.imageUrls = payload.imageUrls;
-      // state.active = payload;
     },
     clearActiveProduct: (state) => {
       state.id = null;
