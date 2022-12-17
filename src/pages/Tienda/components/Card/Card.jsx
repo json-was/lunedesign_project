@@ -12,14 +12,12 @@ import {
 import carritoDelete from "@assets/icons/trash_carrito.svg";
 import carritoPlus from "@assets/icons/plus_carrito.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveProduct } from "@store/productos/productoActivoSlice";
-import { deleteProductById } from "@store/productos/thunks";
-import { addItemCarrito } from "@hooks/localStorage";
+import { setActiveProduct, deleteProductById } from "@store";
+import { addItemCarrito } from "@hooks";
 
 export const Card = ({ title, description, id, precio, imagen }) => {
   const dispatch = useDispatch();
   const { rol } = useSelector((state) => state.auth);
-  const { precioTotal } = useSelector((state) => state.carrito);
 
   const onClickProduct = () => {
     dispatch(setActiveProduct({ title, description, id, precio, imagen }));

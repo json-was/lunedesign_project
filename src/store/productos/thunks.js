@@ -4,7 +4,6 @@ import {
   doc,
   setDoc,
 } from "firebase/firestore/lite";
-import { Navigate, useNavigate } from "react-router-dom";
 import { FirebaseDB } from "../../firebase/config";
 import { fileUpload } from "../../pages/AddModifyItem/helper/fileUpload";
 import {

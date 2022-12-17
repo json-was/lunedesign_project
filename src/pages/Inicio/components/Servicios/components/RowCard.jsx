@@ -8,7 +8,6 @@ import "./RowCard.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { datacard } from "@data/datacard";
 import {
   BackCard,
   BackCardTitle,
@@ -18,6 +17,10 @@ import {
   FrontCard,
   FrontCardTitle,
 } from "./RowCard.style";
+import { useState } from "react";
+import { useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore/lite";
+import { FirebaseDB } from "@firebaseSRC/config";
 
 const customOptionsSwiper = {
   slidesPerView: 4,
@@ -37,15 +40,35 @@ const customOptionsSwiper = {
 };
 
 export const RowCard = () => {
+  // RENDERIZADOR DE PRODUCTOS
+  const [listaProductos, setListaProductos] = useState([]);
+  useEffect(() => {
+    const getLista = async () => {
+      try {
+        const productListId = [];
+        const datos = await getDocs(collection(FirebaseDB, "productos"));
+        datos.forEach((datos) => {
+          const newItem = { id: datos.id, ...datos.data() };
+          productListId.push(newItem);
+        });
+        setListaProductos(productListId);
+        // console.log('hola');
+      } catch (error) {
+        console.log("error en cargar productos");
+      }
+    };
+    getLista();
+  }, []);
+
   return (
     <Swiper {...customOptionsSwiper}>
-      {datacard.map((data) => (
+      {listaProductos.map((data) => (
         <SwiperSlide key={data.id}>
           {/* CARD CONTAINER */}
           <CardContainer target={"_blank"} href="www.google.com">
             {/* FRONT CARD */}
             <FrontCard>
-              <CardImg src={`src/assets/${data.img}.png`} />
+              <CardImg src={data.imagen} />
               <FrontCardTitle>{data.title}</FrontCardTitle>
             </FrontCard>
             {/* BACK CARD */}

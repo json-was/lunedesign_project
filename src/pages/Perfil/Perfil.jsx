@@ -17,7 +17,6 @@ import {
   TitleBox,
   TopSideCard,
 } from "./Perfil.style";
-import calculator from "@assets/calculator.png";
 import input_user from "@assets/icons/input_user.svg";
 import input_mail from "@assets/icons/input_mail.svg";
 import input_map from "@assets/icons/input_map.svg";
@@ -25,7 +24,9 @@ import input_phone from "@assets/icons/input_phone.svg";
 import { useSelector } from "react-redux";
 
 export const Perfil = () => {
-  const {name, email, direccion, numberPhone, imagen} = useSelector(state => state.auth);
+  const { name, email, direccion, numberPhone, imagen } = useSelector(
+    (state) => state.auth
+  );
 
   return (
     <Main>
@@ -43,41 +44,25 @@ export const Perfil = () => {
               <Label>Nombre:</Label>
               <InputBox>
                 <Icon src={input_user} />
-                <Input
-                  type="text"
-                  placeholder={name}
-                  disabled
-                />
+                <Input type="text" placeholder={name} disabled />
               </InputBox>
 
               <Label>Correo:</Label>
               <InputBox>
                 <Icon src={input_mail} />
-                <Input
-                  type="text"
-                  placeholder={email}
-                  disabled
-                />
+                <Input type="text" placeholder={email} disabled />
               </InputBox>
 
               <Label>Dirección:</Label>
               <InputBox>
                 <Icon src={input_map} />
-                <Input
-                  type="text"
-                  placeholder={direccion}
-                  disabled
-                />
+                <Input type="text" placeholder={direccion} disabled />
               </InputBox>
 
               <Label>Telefono:</Label>
               <InputBox>
                 <Icon src={input_phone} />
-                <Input
-                  type="number"
-                  placeholder={numberPhone}
-                  disabled
-                />
+                <Input type="number" placeholder={numberPhone} disabled />
               </InputBox>
 
               {/* <Boton>GUARDAR</Boton> */}

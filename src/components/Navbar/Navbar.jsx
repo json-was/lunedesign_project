@@ -13,7 +13,7 @@ import {
   Usuario,
 } from "./Navbar.style";
 import { useDispatch, useSelector } from "react-redux";
-import { startLogout } from "../../store/auth/thunks";
+import { startLogout } from "@store/auth/thunks";
 
 export const Navbar = () => {
   const dispatch = useDispatch();

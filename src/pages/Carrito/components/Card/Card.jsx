@@ -11,8 +11,8 @@ import {
   PrecioNum,
 } from "./Card.style";
 import carritoDelete from "@assets/icons/trash_carrito.svg";
-import { setActiveProduct } from "@store/productos/productoActivoSlice";
-import { deleteItemCarrito } from "@hooks/localStorage";
+import { setActiveProduct } from "@store/productos";
+import { deleteItemCarrito } from "@hooks";
 import { useDispatch } from "react-redux";
 
 export const Card = ({ title, description, id, precio, imagen }) => {

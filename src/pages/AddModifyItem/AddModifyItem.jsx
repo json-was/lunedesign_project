@@ -1,6 +1,5 @@
 import {
   Boton,
-  BotonGuardar,
   BottomSideCard,
   CardContainer,
   Formulario,
@@ -17,25 +16,16 @@ import {
   TopSide,
 } from "./AddModifyItem.style";
 import { useForm } from "react-hook-form";
-import calculator from "@assets/calculator.png";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  startNewProduct,
-  startUploadingFiles,
-} from "../../store/productos/thunks";
-import {
-  clearActiveProduct,
-  setNewProduct,
-} from "../../store/productos/productoActivoSlice";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
+import { startNewProduct, startUploadingFiles } from "@store/productos/thunks";
+import { clearActiveProduct } from "@store/productos/productoActivoSlice";
+import { useNavigate } from "react-router-dom";
 
 const defaultValues = {
   title: "",
   precio: "",
   description: "",
-  // imageUrls: [],
 };
 
 const modify = false;
@@ -66,19 +56,12 @@ export const AddModifyItem = () => {
     // Ingresan los datos + la imagen como una variable 'Data', las cuales seran mandadas a una función que procesara los datos.
     dispatch(startNewProduct(data));
     setTimeout(() => {
-      navigate('/tienda')
-    }, 1000)
-    // return <Navigate to='/addModifyItem' />
-
-    // console.log(data);
-    // Navigate('/addModifyItem')
-    // <Navigate to='addModifyItem' />
-    // redirect('/addModifyItem')
+      navigate("/tienda");
+    }, 1000);
   };
 
   useEffect(() => {
     dispatch(clearActiveProduct());
-    // navigate('/tienda')
   }, []);
 
   return (
@@ -137,7 +120,7 @@ export const AddModifyItem = () => {
               />
               {/* Boton para mandar los datos ingresados en los input */}
               <Boton>
-              GUARDAR
+                GUARDAR
                 {/* <Link to='/tienda'>GUARDAR</Link> */}
               </Boton>
             </Formulario>

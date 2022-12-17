@@ -11,7 +11,7 @@ import {
 } from "./Tienda.style";
 import plus_add from "@assets/icons/new_product.svg";
 import { useSelector } from "react-redux";
-import { FirebaseDB } from "../../firebase/config";
+import { FirebaseDB } from "@firebaseSRC/config";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 

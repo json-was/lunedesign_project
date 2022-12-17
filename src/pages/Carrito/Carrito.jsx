@@ -15,7 +15,7 @@ import {
 } from "./Carrito.style";
 import { useState } from "react";
 import { useEffect } from "react";
-import { getListCarrito } from "../../hooks/localStorage";
+import { getListCarrito } from "@hooks";
 
 export const Carrito = () => {
   const [carrito, setCarrito] = useState([]);
