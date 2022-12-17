@@ -13,11 +13,19 @@ import {
   TitleBox,
   TopSide,
 } from "./Carrito.style";
-import { datacard } from "@data/datacard";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getListCarrito } from "../../hooks/localStorage";
 
 export const Carrito = () => {
-  const {productCart, precioTotal} = useSelector(state => state.carrito)
+  const [carrito, setCarrito] = useState([]);
+  const preciototatilti = carrito
+    .map((item) => item.precio)
+    .reduce((prev, curr) => prev + curr, 0);
+
+  useEffect(() => {
+    setCarrito(getListCarrito());
+  }, []);
 
   return (
     <Main>
@@ -29,17 +37,17 @@ export const Carrito = () => {
           </TitleBox>
         </TopSide>
         <MiddleSide>
-          {productCart.map((data) => (
-            <Card key={data.id} {...data} />
+          {carrito.map((data, index) => (
+            <Card key={index} {...data} />
           ))}
         </MiddleSide>
         <BottomSide>
           <PrecioBox>
-            <PrecioText>Total: ${precioTotal}</PrecioText>
+            <PrecioText>Total: ${preciototatilti}</PrecioText>
           </PrecioBox>
           <PrecioBox2>
-          <Button>Pagar</Button>
-        </PrecioBox2>
+            <Button>Pagar</Button>
+          </PrecioBox2>
         </BottomSide>
       </CardContainer>
     </Main>

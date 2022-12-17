@@ -65,7 +65,7 @@ export const startUploadingFiles = (files = []) => {
 };
 
 // *************************************************
-// SUBIDA DE IMAGENES A CLOUDINARY
+// BORRAR ITEM DE LA TIENDA
 // *************************************************
 
 export const deleteProductById = () => {

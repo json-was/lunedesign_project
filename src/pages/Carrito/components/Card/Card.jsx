@@ -11,33 +11,36 @@ import {
   PrecioNum,
 } from "./Card.style";
 import carritoDelete from "@assets/icons/trash_carrito.svg";
-import carritoPlus from "@assets/icons/plus_carrito.svg";
-import calculator from "@assets/calculator.png";
-import { deleteProduct, setPrecio } from "../../../../store/carrito/carritoSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { setActiveProduct } from "../../../../store/productos/productoActivoSlice";
+import { setActiveProduct } from "@store/productos/productoActivoSlice";
+import { deleteItemCarrito } from "@hooks/localStorage";
+import { useDispatch } from "react-redux";
 
-export const Card = ({ title, description, id, precio, imagen = "" }) => {
-  const dispatch = useDispatch()
-  const {precioTotal} = useSelector(state => state.carrito)
+export const Card = ({ title, description, id, precio, imagen }) => {
+  const dispatch = useDispatch();
+
+  const onClickProduct = () => {
+    dispatch(setActiveProduct({ title, description, id, precio, imagen }));
+  };
 
   const onDeleteItem = () => {
-    const producto = dispatch(setActiveProduct({ title, description, id, precio, imagen }));
-    dispatch(deleteProduct({ title, description, id, precio, imagen }))
-    const resta = precioTotal - precio
-    dispatch(setPrecio(resta))
+    // dispatch(setActiveProduct({ title, description, id, precio, imagen }));
+    // dispatch(deleteProduct({ title, description, id, precio, imagen }));
+    deleteItemCarrito(id);
+    // const resta = precioTotal - precio;
+    // dispatch(setPrecio(resta));
+    location.reload();
   };
 
   return (
     <CardBox>
       {/* SECTION 1 */}
-      <ImgBox>
+      <ImgBox onClick={onClickProduct}>
         <ImagenP>
-          <img src={calculator} />
+          <img src={imagen} />
         </ImagenP>
       </ImgBox>
       {/* SECTION2 */}
-      <InfoBox>{title}</InfoBox>
+      <InfoBox onClick={onClickProduct}>{title}</InfoBox>
       {/* SECTION3 */}
       <PrecioBox>
         <PrecioNum>{`$ ${precio}`}</PrecioNum>

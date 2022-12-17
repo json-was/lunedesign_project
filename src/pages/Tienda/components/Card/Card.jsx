@@ -1,4 +1,3 @@
-import React from "react";
 import {
   CardBox,
   DeleteCarrito,
@@ -12,17 +11,15 @@ import {
 } from "./Card.style";
 import carritoDelete from "@assets/icons/trash_carrito.svg";
 import carritoPlus from "@assets/icons/plus_carrito.svg";
-import calculator from "@assets/calculator.png";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveProduct } from "../../../../store/productos/productoActivoSlice";
-import { deleteProductById } from "../../../../store/productos/thunks";
-import { setPrecio, updateCarrito } from "../../../../store/carrito/carritoSlice";
+import { setActiveProduct } from "@store/productos/productoActivoSlice";
+import { deleteProductById } from "@store/productos/thunks";
+import { addItemCarrito } from "@hooks/localStorage";
 
-export const Card = ({ title, description, id, precio, imagen = '' }) => {
+export const Card = ({ title, description, id, precio, imagen }) => {
   const dispatch = useDispatch();
   const { rol } = useSelector((state) => state.auth);
-  const {precioTotal} = useSelector(state => state.carrito)
-  // const producto = useSelector((state) => state.productoActivo);
+  const { precioTotal } = useSelector((state) => state.carrito);
 
   const onClickProduct = () => {
     dispatch(setActiveProduct({ title, description, id, precio, imagen }));
@@ -34,11 +31,9 @@ export const Card = ({ title, description, id, precio, imagen = '' }) => {
   };
 
   const addItemToCart = () => {
-    const producto = dispatch(setActiveProduct({ title, description, id, precio, imagen }));
-    dispatch(updateCarrito({ title, description, id, precio, imagen }))
-    const suma = precioTotal + precio
-    dispatch(setPrecio(suma))
-  }
+    dispatch(setActiveProduct({ title, description, id, precio, imagen }));
+    addItemCarrito({ title, description, id, precio, imagen });
+  };
 
   return (
     <CardBox>
@@ -62,7 +57,7 @@ export const Card = ({ title, description, id, precio, imagen = '' }) => {
           ) : (
             <></>
           )}
-          <PlusCarrito onClick={addItemToCart} >
+          <PlusCarrito onClick={addItemToCart}>
             <img src={carritoPlus} />
           </PlusCarrito>
         </Opciones>
