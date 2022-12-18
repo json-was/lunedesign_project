@@ -8,6 +8,7 @@ export const productoActivoSlice = createSlice({
     description: null,
     precio: null,
     imagen: null,
+    isLoading: false,
   },
 
   reducers: {
@@ -24,6 +25,7 @@ export const productoActivoSlice = createSlice({
       state.description = null;
       state.precio = null;
       state.imagen = null;
+      state.isLoading = false;
     },
     setImagenNewProduct: (state, { payload }) => {
       state.imagen = payload;
@@ -34,7 +36,20 @@ export const productoActivoSlice = createSlice({
       state.description = payload.description;
       state.precio = payload.precio;
     },
+    isLoadingImage: (state) => {
+      state.isLoading = true;
+    },
+    isNotLoadingImage: (state) => {
+      state.isLoading = false;
+    },
   },
 });
 
-export const { setActiveProduct, clearActiveProduct, setImagenNewProduct, setNewProduct} = productoActivoSlice.actions;
+export const {
+  setActiveProduct,
+  clearActiveProduct,
+  setImagenNewProduct,
+  setNewProduct,
+  isLoadingImage,
+  isNotLoadingImage,
+} = productoActivoSlice.actions;

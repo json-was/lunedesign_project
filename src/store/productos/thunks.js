@@ -1,13 +1,9 @@
-import {
-  collection,
-  deleteDoc,
-  doc,
-  setDoc,
-} from "firebase/firestore/lite";
+import { collection, deleteDoc, doc, setDoc, updateDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 import { fileUpload } from "../../pages/AddModifyItem/helper/fileUpload";
 import {
   clearActiveProduct,
+  isNotLoadingImage,
   setImagenNewProduct,
   setNewProduct,
 } from "./productoActivoSlice";
@@ -60,6 +56,7 @@ export const startUploadingFiles = (files = []) => {
     // almacenarla en nuestro store centralizado
     const imagen = await fileUpload(files[0]);
     dispatch(setImagenNewProduct(imagen));
+    dispatch(isNotLoadingImage())
   };
 };
 
@@ -72,6 +69,28 @@ export const deleteProductById = () => {
     const { id } = getState().productoActivo;
     await deleteDoc(doc(FirebaseDB, `productos/${id}`));
     dispatch(clearActiveProduct());
-    location.reload()
+    location.reload();
+  };
+};
+
+// *************************************************
+// ACTUALIZAR PRODUCTO
+// *************************************************
+
+export const updateProduct = ({ title, precio, description }) => {
+  return async (dispatch, getState) => {
+    const { imagen, id } = getState().productoActivo;
+    const imagenNotFound =
+      "https://res.cloudinary.com/dssccuwn8/image/upload/v1670099197/assets/icon-image-not-found-free-vector_e6wezo.jpg";
+
+    const editProduct = {
+      title: title,
+      precio: precio,
+      description: description,
+      imagen: imagen ?? imagenNotFound,
+    };
+
+    const newDoc = doc(FirebaseDB, `productos/${id}`);
+    updateDoc(newDoc, editProduct);
   };
 };

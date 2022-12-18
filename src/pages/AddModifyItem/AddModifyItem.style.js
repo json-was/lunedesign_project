@@ -201,6 +201,12 @@ export const Boton = styled.button`
   width: 40%;
   margin-top: 0.5rem;
 
+  &:disabled {
+    background-color: #6b968d;
+    cursor: not-allowed;
+    pointer-events:none;
+  }
+
   &:active {
     background-color: #65b1a0;
   }

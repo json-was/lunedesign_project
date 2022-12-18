@@ -47,7 +47,7 @@ export const Tienda = () => {
             <Title>Tienda</Title>
           </TitleBox>
           {rol === "Administrador" ? (
-            <BtnAddItem to="/addModifyItem" title="Agregar nuevo producto.">
+            <BtnAddItem to="/agregar" title="Agregar nuevo producto.">
               <img src={plus_add} />
             </BtnAddItem>
           ) : (

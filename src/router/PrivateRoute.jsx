@@ -20,7 +20,10 @@ export const PrivateRoute = () => {
       <Route path="/profile" element={<Perfil />} />
       <Route path="/carrito" element={<Carrito />} />
       {rol === "Administrador" && (
-        <Route path="/addModifyItem" element={<AddModifyItem />} />
+        <>
+          <Route path="/agregar" element={<AddModifyItem />} />
+          <Route path="/modificar/:id" element={<AddModifyItem />} />
+        </>
       )}
 
       <Route path="/*" element={<Navigate to="/" />} />

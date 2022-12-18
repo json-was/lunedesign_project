@@ -18,51 +18,68 @@ import {
 import { useForm } from "react-hook-form";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { startNewProduct, startUploadingFiles } from "@store/productos/thunks";
-import { clearActiveProduct } from "@store/productos/productoActivoSlice";
-import { useNavigate } from "react-router-dom";
-
-const defaultValues = {
-  title: "",
-  precio: "",
-  description: "",
-};
-
-const modify = false;
+import {
+  startNewProduct,
+  startUploadingFiles,
+  updateProduct,
+} from "@store/productos/thunks";
+import { clearActiveProduct, isLoadingImage } from "@store/productos/productoActivoSlice";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const AddModifyItem = () => {
-  const { imagen } = useSelector((state) => state.productoActivo);
-  const imagenNotFound =
-    "https://res.cloudinary.com/dssccuwn8/image/upload/v1670096155/productos/icon-image-not-found-free-vector_abilre.jpg";
   const dispatch = useDispatch();
   const fileInputRef = useRef();
+  const navigate = useNavigate();
+
+  const { id } = useParams();
+  const { title, description, precio, imagen, isLoading } = useSelector(
+    (state) => state.productoActivo
+  );
+  const imagenNotFound =
+    "https://res.cloudinary.com/dssccuwn8/image/upload/v1670096155/productos/icon-image-not-found-free-vector_abilre.jpg";
+
+  const defaultValues = {
+    title: "",
+    precio: "",
+    description: "",
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({ defaultValues });
-  const navigate = useNavigate();
 
   // Funcion que nos ayuda a subir la imagen a CLOUDINARY
   const onFileInputChange = ({ target }) => {
     // Si esque no se selecciono una imagen, no ejecutará el codigo.
     if (target.files === 0) return;
     // Funcion que se encargara de subir la imagen
+    dispatch(isLoadingImage());
     dispatch(startUploadingFiles(target.files));
   };
 
   // Al presionar el boton de crear cuenta llamara esta función.
   const onSubmit = (data) => {
     // Ingresan los datos + la imagen como una variable 'Data', las cuales seran mandadas a una función que procesara los datos.
-    dispatch(startNewProduct(data));
+    if (!id) dispatch(startNewProduct(data));
+    if (id) dispatch(updateProduct(data));
+
     setTimeout(() => {
       navigate("/tienda");
     }, 1000);
   };
 
   useEffect(() => {
-    dispatch(clearActiveProduct());
+    if (!id) dispatch(clearActiveProduct());
   }, []);
+
+  if (id) {
+    setValue("title", title);
+    setValue("precio", precio);
+    setValue("description", description);
+  }
 
   return (
     <Main>
@@ -70,7 +87,7 @@ export const AddModifyItem = () => {
         <TopSide>
           <TitleBox>
             <SpanLine />
-            <Title>{modify ? "Modificar" : "Agregar"} producto</Title>
+            <Title>{id ? "Modificar" : "Agregar"} producto</Title>
           </TitleBox>
         </TopSide>
         <BottomSideCard>
@@ -119,7 +136,7 @@ export const AddModifyItem = () => {
                 })}
               />
               {/* Boton para mandar los datos ingresados en los input */}
-              <Boton>
+              <Boton disabled={isLoading}>
                 GUARDAR
                 {/* <Link to='/tienda'>GUARDAR</Link> */}
               </Boton>
@@ -138,7 +155,10 @@ export const AddModifyItem = () => {
               onChange={onFileInputChange}
             />
             {/* Boton al que se le hace referencia y que se mostrara en pantalla */}
-            <Boton onClick={() => fileInputRef.current.click()}>
+            <Boton
+              onClick={() => fileInputRef.current.click()}
+              disabled={isLoading}
+            >
               SUBIR IMAGEN
             </Boton>
           </RightSide>

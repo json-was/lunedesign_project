@@ -1,7 +1,8 @@
 // Funcion que recibe la imagen en forma de variable
 export const fileUpload = async (file) => {
   // Si esque el usuario no selecciona una imagen de su ordenador, no ejecutara el resto de la funcion
-  if (!file) throw new Error("No tenemos ningun archivo para subir.");
+  // if (!file) throw new Error("No tenemos ningun archivo para subir.");
+  if (!file) return console.log("No tenemos ningun archivo para subir.");
 
   // Al cumplir que si exite una imagen, haremos referencia a la base de datos de nuestro CLOUDINARY
   // guardandola en una variable
@@ -28,6 +29,7 @@ export const fileUpload = async (file) => {
     return cloudResp.secure_url;
   } catch (error) {
     // En caso de error, devolvera que no se pudo subir crrectamente la imagen.
-    throw new Error("No tenemos ningun archivo para subir.");
+    console.log("No tenemos ningun archivo para subir.");
+    // throw new Error("No tenemos ningun archivo para subir.");
   }
 };

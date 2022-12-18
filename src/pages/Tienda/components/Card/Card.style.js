@@ -133,3 +133,11 @@ export const DeleteCarrito = styled.button`
     color: #fff;
   }
 `;
+
+export const EditProduct = styled.button`
+  ${CarritoParams};
+  &:active {
+    background-color: #6fa894;
+    color: #fff;
+  }
+`;
