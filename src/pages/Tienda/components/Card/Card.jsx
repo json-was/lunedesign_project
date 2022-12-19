@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Card = ({ title, description, id, precio, imagen }) => {
   const dispatch = useDispatch();
-  const { rol } = useSelector((state) => state.auth);
+  const { rol, status } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   const onClickProduct = () => {
@@ -69,9 +69,11 @@ export const Card = ({ title, description, id, precio, imagen }) => {
           ) : (
             <></>
           )}
-          <PlusCarrito onClick={addItemToCart}>
-            <img src={carritoPlus} />
-          </PlusCarrito>
+          {(status === "authenticated") && (
+            <PlusCarrito onClick={addItemToCart}>
+              <img src={carritoPlus} />
+            </PlusCarrito>
+          )}
         </Opciones>
       </PrecioBox>
     </CardBox>
