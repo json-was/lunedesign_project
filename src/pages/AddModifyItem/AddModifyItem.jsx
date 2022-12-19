@@ -23,7 +23,10 @@ import {
   startUploadingFiles,
   updateProduct,
 } from "@store/productos/thunks";
-import { clearActiveProduct, isLoadingImage } from "@store/productos/productoActivoSlice";
+import {
+  clearActiveProduct,
+  isLoadingImage,
+} from "@store/productos/productoActivoSlice";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const AddModifyItem = () => {
@@ -36,7 +39,7 @@ export const AddModifyItem = () => {
     (state) => state.productoActivo
   );
   const imagenNotFound =
-    "https://res.cloudinary.com/dssccuwn8/image/upload/v1670096155/productos/icon-image-not-found-free-vector_abilre.jpg";
+    "https://res.cloudinary.com/dssccuwn8/image/upload/v1670099197/assets/icon-image-not-found-free-vector_e6wezo.jpg";
 
   const defaultValues = {
     title: "",

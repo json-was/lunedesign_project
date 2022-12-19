@@ -10,8 +10,6 @@ import {
 } from "./BottomBox.style";
 
 export const BottomBox = ({ title, img, description }) => {
-  const imgVariable = `src/assets/icons/${img}.svg`;
-
   return (
     <WorkBox>
       <TopContainer>
@@ -21,7 +19,7 @@ export const BottomBox = ({ title, img, description }) => {
       <BottomContainer>
         <LineIcon>
           <IconBox>
-            <Icon src={imgVariable} />
+            <Icon src={img} />
           </IconBox>
         </LineIcon>
       </BottomContainer>

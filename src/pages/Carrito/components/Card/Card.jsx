@@ -14,21 +14,20 @@ import carritoDelete from "@assets/icons/trash_carrito.svg";
 import { setActiveProduct } from "@store/productos";
 import { deleteItemCarrito } from "@hooks";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const Card = ({ title, description, id, precio, imagen }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onClickProduct = () => {
+    navigate(`/producto/${id}`);
     dispatch(setActiveProduct({ title, description, id, precio, imagen }));
   };
 
   const onDeleteItem = () => {
-    // dispatch(setActiveProduct({ title, description, id, precio, imagen }));
-    // dispatch(deleteProduct({ title, description, id, precio, imagen }));
     deleteItemCarrito(id);
-    // const resta = precioTotal - precio;
-    // dispatch(setPrecio(resta));
-    location.reload();
+    navigate(0);
   };
 
   return (

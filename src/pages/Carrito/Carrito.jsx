@@ -16,8 +16,21 @@ import {
 import { useState } from "react";
 import { useEffect } from "react";
 import { getListCarrito } from "@hooks";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  isLoadingImage,
+  isNotLoadingImage,
+  setActiveProduct,
+} from "../../store/productos/productoActivoSlice";
+import { Loading } from "../../components/Loading/Loading";
+import { useNavigate } from "react-router-dom";
+import { deleteAllCarrito, deleteItemCarrito } from "../../hooks/localStorage";
 
 export const Carrito = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isLoading, id } = useSelector((state) => state.productoActivo);
+
   const [carrito, setCarrito] = useState([]);
   const preciototatilti = carrito
     .map((item) => item.precio)
@@ -27,6 +40,18 @@ export const Carrito = () => {
     setCarrito(getListCarrito());
   }, []);
 
+  const pagando = () => {
+    dispatch(isLoadingImage());
+    setTimeout(() => {
+      dispatch(isNotLoadingImage());
+      deleteAllCarrito();
+      navigate("/");
+    }, 3000);
+  };
+
+  if (isLoading === true) {
+    return <Loading />;
+  }
   return (
     <Main>
       <CardContainer>
@@ -46,7 +71,7 @@ export const Carrito = () => {
             <PrecioText>Total: ${preciototatilti}</PrecioText>
           </PrecioBox>
           <PrecioBox2>
-            <Button>Pagar</Button>
+            <Button onClick={pagando}>Pagar</Button>
           </PrecioBox2>
         </BottomSide>
       </CardContainer>

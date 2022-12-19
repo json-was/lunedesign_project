@@ -17,3 +17,7 @@ export const deleteItemCarrito = (id) => {
   carrito = carrito.filter((item) => item.id !== id);
   localStorage["@carrito"] = JSON.stringify(carrito);
 };
+
+export const deleteAllCarrito = () => {
+  localStorage["@carrito"] = JSON.stringify([]);
+};

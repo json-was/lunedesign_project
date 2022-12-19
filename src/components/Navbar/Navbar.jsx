@@ -30,7 +30,7 @@ export const Navbar = () => {
         <LinkList>
           <LinkItem to="/">Inicio</LinkItem>
           <LinkItem to="/tienda">Tienda</LinkItem>
-          <LinkItem to="/">Sobre mi</LinkItem>
+          <LinkItem to="/sobreMi">Sobre mi</LinkItem>
           <LinkItem to="/contacto">Contacto</LinkItem>
         </LinkList>
       </LeftSide>

@@ -24,6 +24,7 @@ export const Card = ({ title, description, id, precio, imagen }) => {
   const navigate = useNavigate();
 
   const onClickProduct = () => {
+    navigate(`/producto/${id}`);
     dispatch(setActiveProduct({ title, description, id, precio, imagen }));
   };
 
@@ -38,7 +39,7 @@ export const Card = ({ title, description, id, precio, imagen }) => {
   };
 
   const EditItem = () => {
-    navigate(`/modificar/${id}`)
+    navigate(`/modificar/${id}`);
     dispatch(setActiveProduct({ title, description, id, precio, imagen }));
   };
 
@@ -56,14 +57,15 @@ export const Card = ({ title, description, id, precio, imagen }) => {
       <PrecioBox>
         <PrecioNum>{`$ ${precio}`}</PrecioNum>
         <Opciones>
-          <EditProduct onClick={EditItem} >
-            <img src={edit_product} />
-          </EditProduct>
           {rol === "Administrador" ? (
-            // <DeleteCarrito  >
-            <DeleteCarrito onClick={onDeleteItem}>
-              <img src={carritoDelete} />
-            </DeleteCarrito>
+            <>
+              <EditProduct onClick={EditItem}>
+                <img src={edit_product} />
+              </EditProduct>
+              <DeleteCarrito onClick={onDeleteItem}>
+                <img src={carritoDelete} />
+              </DeleteCarrito>
+            </>
           ) : (
             <></>
           )}
