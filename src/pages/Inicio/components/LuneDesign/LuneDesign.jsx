@@ -1,4 +1,5 @@
 import Logo_face from "@assets/Logo-Face.png";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   LeftSide,
@@ -13,6 +14,8 @@ import {
 } from "./LuneDesign.style";
 
 export const LuneDesign = () => {
+  const navigate = useNavigate();
+
   return (
     <Main>
       <LeftSide>
@@ -32,7 +35,7 @@ export const LuneDesign = () => {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </Parrafo>
-          <Button>Saber más</Button>
+          <Button onClick={()=> navigate('/sobreMi')} >Saber más</Button>
         </TextBox>
       </RightSide>
     </Main>
