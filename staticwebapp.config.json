@@ -1,0 +1,16 @@
+{
+  "navigationFallback": {
+      "rewrite": "/index.html",
+      "exclude": [
+          "*.{jpg,gif,png}",
+          "assets/*"
+      ]
+  },
+  "routes": [
+      {
+          "route": "/carrito",
+          "redirect": "/carrito",
+          "statusCode": 301
+      }
+  ]
+}
