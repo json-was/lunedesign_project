@@ -26,7 +26,7 @@ export const Contacto = () => {
         </TitleBox>
         <TextBox>
           <IconMail src={mail_icon} />
-          <Parrafo>: mail.contacto@lialopez.com</Parrafo>
+          <Parrafo>: mail.contacto@lunedesign.com</Parrafo>
         </TextBox>
       </RightSide>
     </Main>
